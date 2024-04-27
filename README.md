@@ -1,5 +1,10 @@
-In this assignment you will produce a digital artefact, which is a novel piece of software. You will write the programming code for this software using the programming language Java. The software that you develop will be built iteratively over the course of the semester, with support and direction given throughout the weekly lab sessions.
-The piece of software that you develop will exhibit the following programming concepts:
+# What is this project?
+This piece of work evidences an assignment set by MMU.
+I have produced a digital artifact, which is a novel piece of software. 
+I have written the programming code for this software using the programming language Java.
+The software has been developed iteratively over the course of a trimester, with support and direction given throughout.
+
+This piece of software exhibits the following programming concepts:
 o Console output
 o User input
 o Selection (If, If-else, Switch)
@@ -8,20 +13,20 @@ o Methods
 o Arrays
 o Testing
 o Objects
+________________________________
+## Marking Guide
+| Mark Band | Code Features (75%) | Code Style (25%)                |
+| :------:  | :-----------------: | :-----------------------------: |
+|86-100     |Additional Features  |Self-directed code management    |
+|75-85      |Feature set 2        |Appropriate package structure    |
+|60-74      |Feature set 1        |Extensive comments               |
+|50-59      |Arrays, Testing      |Consistent indentation           |
+|40-49      |Loops, Methods       |Variables named appropriately    |
+|20-39      |Selection            |Partial code submitted           |
+|0-19       |Basic user input     |Little or no code submitted      |
 
-Mark Band | Code Features (75%) | Code Style (25%)
-86-100    |Additional Features  |Self-directed code management <-
-75-85     |Feature set 2  <-    |Appropriate package structure
-60-74     |Feature set 1        |Extensive comments
-50-59     |Arrays, Testing      |Consistent indentation
-40-49     |Loops, Methods       |Variables named appropriately
-20-39     |Selection            |Partial code submitted
-0-19      |Basic user input     |Little or no code submitted
-
-
-
-
-    Checklist
+_________________________________
+## Compeletion Checklist
     - Console output                       |    Yes
     - User input                           |    Yes
     - Selection (If, If-else, Switch)      |    Yes
@@ -43,8 +48,10 @@ Mark Band | Code Features (75%) | Code Style (25%)
     Code Style:                            |
     - Self-directed code management        |    See use of:
                                                 Git Repository x2 @: 
-                                                https://github.com/Studvart/DigitalArtifact_Refactored3_OOP.git
-                                                
+                                                -- Final Output
+                                                https://github.com/Studvart/DigitalArtifact_Refactored3_OOP OR https://github.com/Studvart/DigitalArtifact_Refactored3_OOP.git
+                                                -- Learning along the way
+                                                https://github.com/Studvart/Learning_MMU OR https://github.com/Studvart/Learning_MMU.git
     - Appropriate package structure        |    Yes
     - Extensive comments                   |    Yes
     - Consistent indentation               |    Yes
