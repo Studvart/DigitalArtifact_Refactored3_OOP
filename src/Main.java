@@ -9,7 +9,6 @@ public class Main {
         // Run programme from single location
         manager.processManager();
     }
-
     /*
     Checklist
     - Console output                       |    Yes
@@ -58,5 +57,4 @@ public class Main {
     - Software Architecture/Design Patterns|    No
 
      */
-
 }
