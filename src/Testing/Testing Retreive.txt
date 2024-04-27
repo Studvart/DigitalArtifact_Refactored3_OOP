@@ -1,0 +1,176 @@
+Testing: Retreive
+
+DigitalArtifact_Refactored3_OOP.Main
+
+Hello and welcome to the programme.
+
+Navigate using the following character options:
+Option (O): Open a new policy
+Option (V): View an existing policy
+Option (E): Exit the programme
+
+1
+1 is not a valid selection.
+Navigate using the following character options:
+Option (O): Open a new policy
+Option (V): View an existing policy
+Option (E): Exit the programme
+
+/
+/ is not a valid selection.
+Navigate using the following character options:
+Option (O): Open a new policy
+Option (V): View an existing policy
+Option (E): Exit the programme
+
+l'
+l' is not a valid selection.
+Navigate using the following character options:
+Option (O): Open a new policy
+Option (V): View an existing policy
+Option (E): Exit the programme
+
+v'
+v' is not a valid selection.
+Navigate using the following character options:
+Option (O): Open a new policy
+Option (V): View an existing policy
+Option (E): Exit the programme
+
+D
+d is not a valid selection.
+Navigate using the following character options:
+Option (O): Open a new policy
+Option (V): View an existing policy
+Option (E): Exit the programme
+
+V
+Please enter the policy number to review:
+270489548
+Policy Number: 270489548
+First Name: d
+Surname: g
+Tier: Gold
+Would you like to:
+Navigate using the following character options:
+Option (P): Proceed to the benefits of this policy
+Option (C): Change the policy you are reviewing
+Option (E): Exit the programme
+
+6
+Would you like to:
+Navigate using the following character options:
+Option (P): Proceed to the benefits of this policy
+Option (C): Change the policy you are reviewing
+Option (E): Exit the programme
+
++
+Would you like to:
+Navigate using the following character options:
+Option (P): Proceed to the benefits of this policy
+Option (C): Change the policy you are reviewing
+Option (E): Exit the programme
+
+/
+Would you like to:
+Navigate using the following character options:
+Option (P): Proceed to the benefits of this policy
+Option (C): Change the policy you are reviewing
+Option (E): Exit the programme
+
+p
+Which benefit would you like to access?
+Navigate using the following integer options:
+Option (1): Make a buildings claim
+Option (2): Make a contents claim
+
+Option (3): Make a Legal claim
+Option (4): Make a Home Emergency claim
+j
+Please enter a valid integer for your selection.
+
+Which benefit would you like to access?
+Navigate using the following integer options:
+Option (1): Make a buildings claim
+Option (2): Make a contents claim
+
+Option (3): Make a Legal claim
+Option (4): Make a Home Emergency claim
++
+Please enter a valid integer for your selection.
+
+Which benefit would you like to access?
+Navigate using the following integer options:
+Option (1): Make a buildings claim
+Option (2): Make a contents claim
+
+Option (3): Make a Legal claim
+Option (4): Make a Home Emergency claim
+6
+6 is not a valid option, please select an option from the menu.Which benefit would you like to access?
+Navigate using the following integer options:
+Option (1): Make a buildings claim
+Option (2): Make a contents claim
+
+Option (3): Make a Legal claim
+Option (4): Make a Home Emergency claim
+2
+We are sorry to hear your possessions have been lost.
+We have forwarded a link via email.
+Please start uploading any evidence or police reports to help us handle your claim.
+
+We would like to ask you a few satisfaction questions.
+Please provide a score of 1 (low) to 5 (high) for the next 5 questions.
+How would you score:
+The ease of your journey?
+
+Please score between 1 and 5.
+h
+Please enter a valid integer for your score.
+
+Please score between 1 and 5.
++
+Please enter a valid integer for your score.
+
+Please score between 1 and 5.
+F
+Please enter a valid integer for your score.
+
+Please score between 1 and 5.
+%
+Please enter a valid integer for your score.
+
+Please score between 1 and 5.
+5
+How would you score:
+The speed of your journey?
+
+Please score between 1 and 5.
+5
+How would you score:
+The clarity of the information presented?
+
+Please score between 1 and 5.
+5
+How would you score:
+The claims registration experience?
+
+Please score between 1 and 5.
+5
+How would you score:
+Your likelihood to recommend us?
+
+Please score between 1 and 5.
+5
+Thank you for participating.
+
+You scored us:
+Ease: 5
+Speed: 5
+Clarity: 5
+Claims: 5
+Recommendation: 5
+Average Score: 5.00
+Thank you for interacting with SAG Bank Insurance Services Limited.
+
+Process finished with exit code 1

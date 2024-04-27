@@ -1,0 +1,154 @@
+Testing: Stright Through
+
+DigitalArtifact_Refactored3_OOP.Main
+
+Hello and welcome to the programme.
+
+Navigate using the following character options:
+Option (O): Open a new policy
+Option (V): View an existing policy
+Option (E): Exit the programme
+
+o
+Before we start, lets collect some data about you.
+What is your first name?
+Tiger
+What is your surname?
+Woods
+Here are our tiered options:
+All policies cover:
+Buildings for: fire, flood and storm damage
+Contents for : the same as buildings + theft and freezer food losses.
+----------------------------------------------------------------------
+
+Bronze provides:
+No additional benefits
+---------------------------------------
+Silver provides:
+Bronze benefits and
+Legal Expenses up to £50k.
+---------------------------------------
+Gold provides:
+Bronze + Silver benefits and
+Home Emergencies up to £1k per claim.
+---------------------------------------
+Which tier would you like?
+1. Bronze, 2. Silver, 3. Gold
+Input the corresponding integer.
+P
+Please enter a valid integer for your selection.
+
+Which tier would you like?
+1. Bronze, 2. Silver, 3. Gold
+Input the corresponding integer.
+-
+Please enter a valid integer for your selection.
+
+Which tier would you like?
+1. Bronze, 2. Silver, 3. Gold
+Input the corresponding integer.
+l
+Please enter a valid integer for your selection.
+
+Which tier would you like?
+1. Bronze, 2. Silver, 3. Gold
+Input the corresponding integer.
+9
+9 is not a valid input.
+Please select a valid integer from on screen.
+Which tier would you like?
+1. Bronze, 2. Silver, 3. Gold
+Input the corresponding integer.
+22
+22 is not a valid input.
+Please select a valid integer from on screen.
+Which tier would you like?
+1. Bronze, 2. Silver, 3. Gold
+Input the corresponding integer.
+2
+Policy has been created successfully.
+Associated to customer: Tiger Woods.
+Your reference number is 930823195.
+You have selected tier: Silver
+Would you like to:
+Navigate using the following character options:
+Option (P): Proceed to the benefits of this policy
+Option (C): Change the policy you are reviewing
+Option (E): Exit the programme
+
+p
+Which benefit would you like to access?
+Navigate using the following integer options:
+Option (1): Make a buildings claim
+Option (2): Make a contents claim
+
+Option (3): Make a Legal claim
+q
+Please enter a valid integer for your selection.
+
+Which benefit would you like to access?
+Navigate using the following integer options:
+Option (1): Make a buildings claim
+Option (2): Make a contents claim
+
+Option (3): Make a Legal claim
+44
+44 is not a valid option, please select an option from the menu.
+Which benefit would you like to access?
+Navigate using the following integer options:
+Option (1): Make a buildings claim
+Option (2): Make a contents claim
+
+Option (3): Make a Legal claim
+4
+4 is not a valid option, please select an option from the menu.
+Which benefit would you like to access?
+Navigate using the following integer options:
+Option (1): Make a buildings claim
+Option (2): Make a contents claim
+
+Option (3): Make a Legal claim
+3
+Our Legal team will be in touch within 1 working day.
+We will assign your case to a relevantly skilled team.
+Please have as much documentation to hand to support the discussion.
+
+We would like to ask you a few satisfaction questions.
+Please provide a score of 1 (low) to 5 (high) for the next 5 questions.
+How would you score:
+The ease of your journey?
+
+Please score between 1 and 5.
+2
+How would you score:
+The speed of your journey?
+
+Please score between 1 and 5.
+3
+How would you score:
+The clarity of the information presented?
+
+Please score between 1 and 5.
+4
+How would you score:
+The claims registration experience?
+
+Please score between 1 and 5.
+5
+How would you score:
+Your likelihood to recommend us?
+
+Please score between 1 and 5.
+5
+Thank you for participating.
+
+You scored us:
+Ease: 2
+Speed: 3
+Clarity: 4
+Claims: 5
+Recommendation: 5
+Average Score: 3.80
+Thank you for interacting with SAG Bank Insurance Services Limited.
+
+Process finished with exit code 1

@@ -1,0 +1,15 @@
+Testing: Exit
+
+DigitalArtifact_Refactored3_OOP.Main
+
+Hello and welcome to the programme.
+
+Navigate using the following character options:
+Option (O): Open a new policy
+Option (V): View an existing policy
+Option (E): Exit the programme
+
+e
+Thank you for interacting with SAG Bank Insurance Services Limited.
+
+Process finished with exit code 1

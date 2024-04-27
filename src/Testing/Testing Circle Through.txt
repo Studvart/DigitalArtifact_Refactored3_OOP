@@ -1,0 +1,171 @@
+Testing: Circle Through
+
+DigitalArtifact_Refactored3_OOP.Main
+
+Hello and welcome to the programme.
+
+Navigate using the following character options:
+Option (O): Open a new policy
+Option (V): View an existing policy
+Option (E): Exit the programme
+
+v
+Please enter the policy number to review:
+473826815
+Policy Number: 473826815
+First Name: w
+Surname: e
+Tier: Gold
+Would you like to:
+Navigate using the following character options:
+Option (P): Proceed to the benefits of this policy
+Option (C): Change the policy you are reviewing
+Option (E): Exit the programme
+
+c
+
+Navigate using the following character options:
+Option (O): Open a new policy
+Option (V): View an existing policy
+Option (E): Exit the programme
+
+v
+Please enter the policy number to review:
+304340915
+Policy Number: 304340915
+First Name: j
+Surname: yyy
+Tier: Silver
+Would you like to:
+Navigate using the following character options:
+Option (P): Proceed to the benefits of this policy
+Option (C): Change the policy you are reviewing
+Option (E): Exit the programme
+
+c
+
+Navigate using the following character options:
+Option (O): Open a new policy
+Option (V): View an existing policy
+Option (E): Exit the programme
+
+o
+Before we start, lets collect some data about you.
+What is your first name?
+Titan
+What is your surname?
+Powers
+Here are our tiered options:
+All policies cover:
+Buildings for: fire, flood and storm damage
+Contents for : the same as buildings + theft and freezer food losses.
+----------------------------------------------------------------------
+
+Bronze provides:
+No additional benefits
+---------------------------------------
+Silver provides:
+Bronze benefits and
+Legal Expenses up to £50k.
+---------------------------------------
+Gold provides:
+Bronze + Silver benefits and
+Home Emergencies up to £1k per claim.
+---------------------------------------
+Which tier would you like?
+1. Bronze, 2. Silver, 3. Gold
+Input the corresponding integer.
+q
+Please enter a valid integer for your selection.
+
+Which tier would you like?
+1. Bronze, 2. Silver, 3. Gold
+Input the corresponding integer.
+2222
+2222 is not a valid input.
+Please select a valid integer from on screen.
+Which tier would you like?
+1. Bronze, 2. Silver, 3. Gold
+Input the corresponding integer.
+1
+Policy has been created successfully.
+Associated to customer: Titan Powers.
+Your reference number is 534158204.
+You have selected tier: Bronze
+Would you like to:
+Navigate using the following character options:
+Option (P): Proceed to the benefits of this policy
+Option (C): Change the policy you are reviewing
+Option (E): Exit the programme
+
+11111				<------------------ Fault Identified = No failure message shown.
+Would you like to:
+Navigate using the following character options:
+Option (P): Proceed to the benefits of this policy
+Option (C): Change the policy you are reviewing
+Option (E): Exit the programme
+
+q
+Would you like to:
+Navigate using the following character options:
+Option (P): Proceed to the benefits of this policy
+Option (C): Change the policy you are reviewing
+Option (E): Exit the programme
+
+P
+Which benefit would you like to access?
+Navigate using the following integer options:
+Option (1): Make a buildings claim
+Option (2): Make a contents claim
+
+2
+We are sorry to hear your possessions have been lost.
+We have forwarded a link via email.
+Please start uploading any evidence or police reports to help us handle your claim.
+
+We would like to ask you a few satisfaction questions.
+Please provide a score of 1 (low) to 5 (high) for the next 5 questions.
+How would you score:
+The ease of your journey?
+
+Please score between 1 and 5.
+Q
+Please enter a valid integer for your score.
+
+Please score between 1 and 5.
+6666
+6666 is not a valid option.
+Please score between 1 and 5.
+2
+How would you score:
+The speed of your journey?
+
+Please score between 1 and 5.
+2
+How would you score:
+The clarity of the information presented?
+
+Please score between 1 and 5.
+5
+How would you score:
+The claims registration experience?
+
+Please score between 1 and 5.
+1
+How would you score:
+Your likelihood to recommend us?
+
+Please score between 1 and 5.
+4
+Thank you for participating.
+
+You scored us:
+Ease: 2
+Speed: 2
+Clarity: 5
+Claims: 1
+Recommendation: 4
+Average Score: 2.80
+Thank you for interacting with SAG Bank Insurance Services Limited.
+
+Process finished with exit code 1
