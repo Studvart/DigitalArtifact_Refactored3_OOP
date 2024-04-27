@@ -25,6 +25,11 @@ ________________________________
 |20-39      |Selection            |Partial code submitted           |
 |0-19       |Basic user input     |Little or no code submitted      |
 
+Based on this guide table, I would place myself:
+| Code Features (75%) | Code Style (25%)                |
+| :-----------------: | :-----------------------------: |
+| At least 75-85  | 86-100 |
+
 _________________________________
 ## Compeletion Checklist
     - Console output                       |    Yes
