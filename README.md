@@ -55,7 +55,7 @@ _________________________________
                                                 Git Repository x2 @: 
                                                 -- Final Output
                                                 https://github.com/Studvart/DigitalArtifact_Refactored3_OOP OR https://github.com/Studvart/DigitalArtifact_Refactored3_OOP.git
-                                                ^^^ Includes learning Markdown ^^^
+                                                Includes learning Markdown
                                                 -- Learning along the way
                                                 https://github.com/Studvart/Learning_MMU OR https://github.com/Studvart/Learning_MMU.git
     - Appropriate package structure        |    Yes
