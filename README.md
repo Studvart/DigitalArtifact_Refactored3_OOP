@@ -32,50 +32,56 @@ Based on this guide table, I would place myself:
 
 _________________________________
 ## Compeletion Checklist
-    - Console output                       |    Yes
-    - User input                           |    Yes
-    - Selection (If, If-else, Switch)      |    Yes
-    - Loops                                |    Yes
-    - Methods                              |    Yes
-    - Arrays                               |    Yes
-    - Testing                              |    Yes
-    - Objects                              |    Yes
 
-    Code Features:                         |
-    - Additional Features                  |    Additional Feature Set 1's completed.
-    - Feature set 2                        |    Yes
-    - Feature set 1                        |    Yes
-    - Arrays, Testing                      |    Yes
-    - Loops, Methods                       |    Yes
-    - Selection                            |    Yes
-    - Basic user input                     |    Yes
+### Core Requirements:
+| Requirement                          | Status                                                                                                                                   |
+| :----------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------- |
+| Console output                       | Yes                                                                                                                                      |
+| User input                           | Yes                                                                                                                                      |
+| Selection (If, If-else, Switch)      | Yes                                                                                                                                      |
+| Loops                                | Yes                                                                                                                                      |
+| Methods                              | Yes                                                                                                                                      |
+| Arrays                               | Yes                                                                                                                                      |
+| Testing                              | Yes                                                                                                                                      |
+| Objects                              | Yes                                                                                                                                      |
 
-    Code Style:                            |
-    - Self-directed code management        |    See use of:
-                                                Git Repository x2 @: 
-                                                -- Final Output
-                                                https://github.com/Studvart/DigitalArtifact_Refactored3_OOP OR https://github.com/Studvart/DigitalArtifact_Refactored3_OOP.git
-                                                Includes learning Markdown
-                                                -- Learning along the way
-                                                https://github.com/Studvart/Learning_MMU OR https://github.com/Studvart/Learning_MMU.git
-    - Appropriate package structure        |    Yes
-    - Extensive comments                   |    Yes
-    - Consistent indentation               |    Yes
-    - Variables named appropriately        |    Yes
+### Code Features:
+| Requirement                          | Status                                                                                                                                   |
+| :----------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------- |
+| Additional Features                  | Additional Feature Set 1's completed.                                                                                                    |
+| Feature set 2                        | Yes                                                                                                                                      |
+| Feature set 1                        | Yes                                                                                                                                      |
+| Arrays, Testing                      | Yes                                                                                                                                      |
+| Loops, Methods                       | Yes                                                                                                                                      |
+| Selection                            | Yes                                                                                                                                      |
+| Basic user input                     | Yes                                                                                                                                      |
 
-    Feature Set 1:
-    Are at least 2 Implemented? -- Yes
-    - A Data Object                        |    Yes - See Customer, Tier, Satisfaction and Product Class'
-    - File Input                           |    Yes - See ReadFile Class
-    - File Output                          |    Yes - See WriteFile Class
-    - Custom Exceptions                    |    Yes - See InvalidPolicyNumberException
-    - User friendly UI                     |    Yes - See try-catch in ReadFile and do-while in Customer and .toLowerCase() in process manager.
+### Code Style:
+| Requirement                          | Status                                                                                                                                   |
+| :----------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------- |
+| Self-directed code management        | See use of: Git Repository x2 @: https://github.com/Studvart/DigitalArtifact_Refactored3_OOP AND https://github.com/Studvart/Learning_MMU , Includes learning Markdown |
+| Appropriate package structure        | Yes                                                                                                                                      |
+| Extensive comments                   | Yes                                                                                                                                      |
+| Consistent indentation               | Yes                                                                                                                                      |
+| Variables named appropriately        | Yes                                                                                                                                      |
 
-    Feature Set 2:
-    Are at least 2 Implemented? -- Yes
-    - Encapsulation                        |    Yes
-    - Abstract Classes or Interfaces       |    No
-    - Inheritance                          |    Yes
-    - Streams API                          |    No
-    - GUI                                  |    No
-    - Software Architecture/Design Patterns|    No
+#### Feature Set 1:
+##### Are at least 2 Implemented? -- Yes
+| Requirement                          | Status                                                                                                                                   |
+| :----------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------- |
+| A Data Object                        |    Yes - See Customer, Tier, Satisfaction and Product Class'                                                                             |
+| File Input                           |    Yes - See ReadFile Class                                                                                                              |
+| File Output                          |    Yes - See WriteFile Class                                                                                                             |
+| Custom Exceptions                    |    Yes - See InvalidPolicyNumberException                                                                                                |
+| User friendly UI                     |    Yes - See try-catch in ReadFile and do-while in Customer and .toLowerCase() in process manager.                                       |
+
+#### Feature Set 2:
+##### Are at least 2 Implemented? -- Yes
+| Requirement                          | Status                                                                                                                                   |
+| :----------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------- |    
+| Encapsulation                        | Yes                                                                                                                                      |
+| Abstract Classes or Interfaces       | No                                                                                                                                       |
+| Inheritance                          | Yes                                                                                                                                      |
+| Streams API                          | No                                                                                                                                       |
+| GUI                                  | No                                                                                                                                       |
+| Software Architecture/Design Patterns| No                                                                                                                                       |
