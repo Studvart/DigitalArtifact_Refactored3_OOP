@@ -5,14 +5,14 @@ I have written the programming code for this software using the programming lang
 The software has been developed iteratively over the course of a trimester, with support and direction given throughout.
 
 This piece of software exhibits the following programming concepts:
-o Console output
-o User input
-o Selection (If, If-else, Switch)
-o Loops
-o Methods
-o Arrays
-o Testing
-o Objects
+- Console output
+- User input
+- Selection (If, If-else, Switch)
+- Loops
+- Methods
+- Arrays
+- Testing
+- Objects
 ________________________________
 ## Marking Guide
 | Mark Band | Code Features (75%) | Code Style (25%)                |
@@ -55,6 +55,7 @@ _________________________________
                                                 Git Repository x2 @: 
                                                 -- Final Output
                                                 https://github.com/Studvart/DigitalArtifact_Refactored3_OOP OR https://github.com/Studvart/DigitalArtifact_Refactored3_OOP.git
+                                                ^^^ Includes learning Markdown ^^^
                                                 -- Learning along the way
                                                 https://github.com/Studvart/Learning_MMU OR https://github.com/Studvart/Learning_MMU.git
     - Appropriate package structure        |    Yes
