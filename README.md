@@ -18,6 +18,9 @@ Mark Band | Code Features (75%) | Code Style (25%)
 20-39     |Selection            |Partial code submitted
 0-19      |Basic user input     |Little or no code submitted
 
+
+
+
     Checklist
     - Console output                       |    Yes
     - User input                           |    Yes
@@ -40,10 +43,9 @@ Mark Band | Code Features (75%) | Code Style (25%)
     Code Style:                            |
     - Self-directed code management        |    See use of:
                                                 Git Repository x2 @: 
-                                                Tier Class: _lowestTier,_middleTier,_highestTier & tierSelection() tierMenu: for breaks (in other places too)
-                                                Satisfaction Class: numberOfQuestions, maxScore, minScore
-                                                Customer Class: customerRetrieveMenu() variables
-    - Appropriate package structure        |    Yes - or close approximation.
+                                                https://github.com/Studvart/DigitalArtifact_Refactored3_OOP.git
+                                                
+    - Appropriate package structure        |    Yes
     - Extensive comments                   |    Yes
     - Consistent indentation               |    Yes
     - Variables named appropriately        |    Yes
