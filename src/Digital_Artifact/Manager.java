@@ -43,7 +43,6 @@ public class Manager {
         String proceedBenefits = "p";
         String changePolicy = "c";
         while (true) {
-
             // while controls customer input to accepted menu inputs only.
             String option = "";
             // Declare a name for the following statement so that the break function, actions in the correct place.

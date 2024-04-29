@@ -2,8 +2,8 @@ package DigitalArtifact_Refactored3_OOP.Digital_Artifact;
 
 public class Tier_Gold extends Tier_Silver {
     @Override
-    protected void accessRewards(Customer customer) {
-        super.accessRewards(customer);
+    protected void accessRewards(Customer _customer) {
+        super.accessRewards(_customer);
 
         switch (benefitOption) {
             case 4:

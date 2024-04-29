@@ -31,8 +31,16 @@ public class Tier {
         printBenefits();
         _tierSelected = null;
 
+        int menuOption = optionMenu();
+        _tierSelected = tierAssigned(menuOption);
+
+        return _tierSelected;
+    }
+
+    protected int optionMenu() {
         // Do loop works as a constraint to limit acceptable values.
         int _option = 0;
+
         // Declare a name for the following statement so that the break function, actions in the correct place.
         tierMenu:
         do {
@@ -58,7 +66,10 @@ public class Tier {
                 _option = 0;
             }
         } while ((_option == 0));
+        return _option;
+    }
 
+    protected String tierAssigned(int _option) {
         /* Switch to optimise subsequent if, else if...., else statement.
         Initialises the correct Tier from selection, sets Tier and tierSelected globally and returns String tierSelected*/
         switch (_option) {
@@ -127,7 +138,12 @@ public class Tier {
         tierBenefitsGold();
     }
 
-    protected void accessRewards(Customer customer) {
+    protected void accessRewards(Customer _customer) {
+        accessRewardsMenuSelection(_customer);
+        accessRewardsBenefitOutput();
+    }
+
+    protected int accessRewardsMenuSelection(Customer customer) {
         // Call to process which begins inheritance journey.
         // Declare a name for the following statement so that the break function, actions in the correct place.
         accessMenu:
@@ -158,7 +174,10 @@ public class Tier {
             }
 
         } while (!(benefitOption > 0 && benefitOption <= availableBenefitOptions(customer)));
+        return benefitOption;
+    }
 
+    protected void accessRewardsBenefitOutput() {
         // Functionality extended by inherited classes.
         switch (benefitOption) {
             case 1:

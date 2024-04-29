@@ -50,26 +50,15 @@ public class Customer {
     public void createPolicyRecord() {
         System.out.println("Before we start, lets collect some data about you.");
 
-        System.out.println("What is your first name?");
-        firstName = scanner.next();
-        System.out.println("What is your surname?");
-        surname = scanner.next();
-
-        tier = new Tier();
-        tierSelected = tier.tierSelection();
-        tier = tier.get_tier();
-
+        captureFirstname();
+        captureSurname();
+        captureTier();
         assignPolicyNumber();
 
-        System.out.printf("""
-                Policy has been created successfully.
-                Associated to customer: %s %s.
-                Your reference number is %d.
-                You have selected tier: %s
-                
-                """, firstName, surname, policyNumber, tierSelected);
-
+        // Creates customer object with user defined characteristics.
         WriteFile.writeCustomerFile(this);
+
+        replaySuccessfulRecordDetails();
     }
 
     public void customerInformation() {
@@ -83,11 +72,37 @@ public class Customer {
                 """, policyNumber, firstName, surname, tierSelected);
     }
 
-    public void assignPolicyNumber() {
+    private void captureFirstname() {
+        System.out.println("What is your first name?");
+        firstName = scanner.next();
+    }
+
+    private void captureSurname() {
+        System.out.println("What is your surname?");
+        surname = scanner.next();
+    }
+
+    private void captureTier() {
+        tier = new Tier();
+        tierSelected = tier.tierSelection();
+        tier = tier.get_tier();
+    }
+
+    private void assignPolicyNumber() {
         //Force policy number between parameter defined numbers held in appropriate Class for this model.
         while (!(policyNumber > product.getPolicyNumberMin() && policyNumber < product.getPolicyNumberMax())) {
             policyNumber = (int) ((Math.random() * (product.getPolicyNumberMax() - product.getPolicyNumberMin())) + product.getPolicyNumberMin());
         }
+    }
+
+    private void replaySuccessfulRecordDetails() {
+        System.out.printf("""
+                Policy has been created successfully.
+                Associated to customer: %s %s.
+                Your reference number is %d.
+                You have selected tier: %s
+                                
+                """, firstName, surname, policyNumber, tierSelected);
     }
 
 }
