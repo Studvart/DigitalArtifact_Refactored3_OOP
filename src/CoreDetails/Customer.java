@@ -15,6 +15,23 @@ public class Customer {
     private int policyNumber;
     private String firstName;
     private String surname;
+
+    public void setTierSelected(String tierSelected) {
+        this.tierSelected = tierSelected;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setPolicyNumber(int policyNumber) {
+        this.policyNumber = policyNumber;
+    }
+
     private String tierSelected;
 
     // Default Run - Create a non-existent customer

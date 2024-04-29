@@ -26,9 +26,17 @@ public class Tier {
     public Tier() {
     }
 
+    public String get_tierSelected() {
+        return _tierSelected;
+    }
+
     //Provides access to private variable outside of Class
     public Tier get_tier() {
         return _tier;
+    }
+
+    public void set_tier(Tier _tier) {
+        this._tier = _tier;
     }
 
     public String tierSelection() {
@@ -74,7 +82,8 @@ public class Tier {
         return _option;
     }
 
-    protected String tierAssigned(int _option) {
+    // This class was made public to evidence testing - checkTierAssigned()
+    public String tierAssigned(int _option) {
         /* Switch to optimise subsequent if, else if...., else statement.
         Initialises the correct Tier from selection, sets Tier and tierSelected globally and returns String tierSelected*/
         switch (_option) {
@@ -241,5 +250,3 @@ public class Tier {
         return _tier;
     }
 }
-
-

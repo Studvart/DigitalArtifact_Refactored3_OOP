@@ -135,14 +135,13 @@ public class Manager {
         // for loop ensures customer doest proceed with invaild input. Ensures a defined number of attempts.
         for (int i = 3; i > 0; i--) {
             try {
-                System.out.println("Please enter the policy number to review:");
-                int policyNumber = scanner.nextInt();
-                scanner.nextLine();
 
+                // Take Policy number from customer
+                int policyNumber = capturePolicyNumber();
                 // Product class contains a method to skip the following messages and provide additional context.
                 product.checkPolicyNumber(policyNumber);
 
-                // Returns the uploaded details as a customer object.
+                // Returns the uploaded details as a customer object if found.
                 foundCustomer = ReadFile.accessPolicyData(policyNumber);
 
                 if ((foundCustomer != null)) {
@@ -172,6 +171,13 @@ public class Manager {
         terminateProgramme();
         // Never expected to reach this return. Required for method validity.
         return foundCustomer;
+    }
+
+    private int capturePolicyNumber() {
+        System.out.println("Please enter the policy number to review:");
+        int _policyNumber = scanner.nextInt();
+        scanner.nextLine();
+        return _policyNumber;
     }
 }
 
