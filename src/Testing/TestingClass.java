@@ -41,7 +41,7 @@ public class TestingClass {
         System.out.println("When inputting an invalid policy number, are these cases correctly identified?");
         testingInvalidPolNumHandling();
         System.out.println("Demonstrates that the survey results are returned in teh correct order.");
-        checkSurveyArrayScoresReturned();
+        testReturnScores();
         System.out.println("No More Tests");
 
         /*
@@ -57,14 +57,15 @@ public class TestingClass {
         */
     }
 
+
     public static void checkTierAssigned() {
         // Proves the user input corresponds to the expected assigned Tier.
         int _tierAssignedUserInput = 2;
         String _output = tier.tierAssigned(_tierAssignedUserInput);
         if (_output.equals(_tierSilverSelected)) {
-            System.out.println("Test Passed");
+            ConsoleColours.printGreen("Test Passed");
         } else {
-            System.out.println("Test Failed");
+            ConsoleColours.printRed("Test Failed");
         }
     }
 
@@ -75,9 +76,9 @@ public class TestingClass {
         tier.set_tier(_tierGold);
         int _optionsAvailable = tier.accessRewardsSelectionMenu(customer);
         if (_optionsAvailable == 4) {
-            System.out.println("Test Passed");
+            ConsoleColours.printGreen("Test Passed");
         } else {
-            System.out.println("Test Failed");
+            ConsoleColours.printRed("Test Failed");
         }
     }
 
@@ -93,9 +94,9 @@ public class TestingClass {
                 Please start uploading any evidence or police reports to help us handle your claim.
                                 
                 """)) {
-            System.out.println("Test Passed");
+            ConsoleColours.printGreen("Test Passed");
         } else {
-            System.out.println("Test Failed");
+            ConsoleColours.printRed("Test Failed");
         }
     }
 
@@ -113,9 +114,9 @@ public class TestingClass {
 
         Customer _customer = ReadFile.accessPolicyData(_pN);
         if (_customer.getFirstName().equals(_fN) && _customer.getSurname().equals(_sN) && _customer.getTierSelected().equals(_tierSilverSelected)) {
-            System.out.println("Test Passed - Details Matched Policy 999999");
+            ConsoleColours.printGreen("Test Passed - Details Matched Policy 999999");
         } else {
-            System.out.println("Test Failed - Details didn't Match Policy 999999");
+            ConsoleColours.printRed("Test Failed - Details didn't Match Policy 999999");
         }
     }
 
@@ -123,9 +124,9 @@ public class TestingClass {
         // Proves the ReadFile Class returns the correct results from a stored record.
         Customer _customer = ReadFile.accessPolicyData(422618);
         if (_customer.getFirstName().equals("Possidon") && _customer.getSurname().equals("Zeus") && _customer.getTierSelected().equals("Gold")) {
-            System.out.println("Test Passed - Details Matched Policy 422618");
+            ConsoleColours.printGreen("Test Passed - Details Matched Policy 422618");
         } else {
-            System.out.println("Test Failed - Details didn't Match Policy 422618");
+            ConsoleColours.printRed("Test Failed - Details didn't Match Policy 422618");
         }
     }
 
@@ -133,39 +134,51 @@ public class TestingClass {
         // Proves that the error handling correctly identifies incompatible values.
         int[] testPolNum = {-5, 32475, 1234569, 111111};
         int _invalidCount = 0;
+        int _validCount = 0; // Initialize valid count
         int _attemptsCount = 0;
 
         for (int j = 0; j < 4; j++) {
+            // Uses ++ on values to increment counts - replacing x = x + 1
             try {
                 product.checkPolicyNumber(testPolNum[j]);
+                // If no exception is thrown, policy number is valid
+                _validCount++;
             } catch (InvalidPolicyNumberException e) {
-                _invalidCount = _invalidCount + 1;
+                _invalidCount++;
             }
-            _attemptsCount = _attemptsCount + 1;
+            _attemptsCount++;
         }
         System.out.printf("""
-                Count of invalid policy numbers presented %d.
-                Count of policy numbers presented %d.
-                """, _invalidCount, _attemptsCount);
-        if (_attemptsCount == 4 && _invalidCount == 3) {
-            System.out.println("Test Passed");
+                Count of invalid policy numbers presented: %d.
+                Count of valid policy numbers presented: %d.
+                Count of policy numbers presented: %d.
+                """, _invalidCount, _validCount, _attemptsCount);
+        if (_attemptsCount == 4 && _invalidCount == 3 && _validCount == 1) {
+            ConsoleColours.printGreen("Test Passed");
         } else {
-            System.out.println("Test Failed");
+            ConsoleColours.printRed("Test Failed");
         }
     }
 
-    public static void checkSurveyArrayScoresReturned() {
+
+    // Test method for returnScores() in Satisfaction class
+    public static void testReturnScores() {
         /* ByteArrayOutputStream is used to capture the output normally printed to the console (System.out).
            The redirected output can be compared to the expected output programmatically.
            This allows the automation of the testing process without relying on manual observation.*/
+
+        // Create a sample survey array
         int[] surveyArray = new int[]{1, 2, 3, 4, 5};
 
-        // Redirect System.out to ByteArrayOutputStream to capture the output
-        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-        PrintStream originalOut = System.out;
-        System.setOut(new PrintStream(outputStream));
+        // Create an instance of the Satisfaction class
+        Satisfaction satisfaction = new Satisfaction();
 
-        // Call the method
+        // Call the returnScores method and capture the output
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        PrintStream printStream = new PrintStream(outputStream);
+        PrintStream originalOut = System.out;
+        System.setOut(printStream);
+
         satisfaction.returnScores(surveyArray);
 
         // Reset System.out
@@ -185,12 +198,12 @@ public class TestingClass {
                 Average Score: 3.00
                 """;
 
+        /* Assert is a built-in feature of the Java language that allows developers
+        to specify conditions that they expect to hold true during program execution.*/
         // Compare actual and expected output
-        if (actualOutput.equals(expectedOutput)) {
-            System.out.println("Test Passed");
-        } else {
-            System.out.println("Test Failed");
-        }
+        // assert condition : errorMessage;
+        assert actualOutput.equals(expectedOutput) : "Test failed";
+        ConsoleColours.printGreen("Test passed");
     }
 }
 
