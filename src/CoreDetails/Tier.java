@@ -66,7 +66,7 @@ public class Tier {
                 _option = scanner.nextInt();
                 // Inverted if following testing to enable a message to display for failed values.
                 if ((_option > 0 && _option < 4)) {
-                    break tierMenu;
+                    break;
                 }
                 System.out.printf("""
                         %d is not a valid input.
@@ -82,7 +82,7 @@ public class Tier {
         return _option;
     }
 
-    // This class was made public to evidence testing - checkTierAssigned()
+    // On the advice of Jimmy - This method was made public for the purpose of testing. This should be protected.
     public String tierAssigned(int _option) {
         /* Switch to optimise subsequent if, else if...., else statement.
         Initialises the correct Tier from selection, sets Tier and tierSelected globally and returns String tierSelected*/
@@ -153,78 +153,78 @@ public class Tier {
     }
 
     public void accessRewards(Customer _customer) {
-        accessRewardsMenuSelection(_customer);
-        accessRewardsBenefitOutput();
+        benefitOption = accessRewardsMenuSelection(_customer);
+        System.out.printf("%s", accessRewardsBenefitOutput(benefitOption));
     }
 
     protected int accessRewardsMenuSelection(Customer customer) {
+        int availableBenefitOptions;
+        int _benefitOption = 0;
         // Call to process which begins inheritance journey.
         // Declare a name for the following statement so that the break function, actions in the correct place.
         accessMenu:
         do {
-            System.out.println("""
-                    Which benefit would you like to access?
-                    Navigate using the following integer options:
-                    Option (1): Make a buildings claim
-                    Option (2): Make a contents claim
-                    """);
-            // Offer additional options dependent on tierSelected. 2x if as both may be required.
-            if (customer.getTierSelected().equals(_middleTier) || customer.getTierSelected().equals(_highestTier)) {
-                System.out.println("Option (3): Make a Legal claim");
-                if (customer.getTierSelected().equals(_highestTier)) {
-                    System.out.println("Option (4): Make a Home Emergency claim");
-                }
-            }
+            availableBenefitOptions = accessRewardsSelectionMenu(customer);
             try {
-                benefitOption = scanner.nextInt();
+                _benefitOption = scanner.nextInt();
                 scanner.nextLine();
-                if (benefitOption > 0 && benefitOption <= availableBenefitOptions(customer)) {
-                    break accessMenu;
+                if (_benefitOption > 0 && _benefitOption <= availableBenefitOptions) {
+                    break;
                 }
-                System.out.printf("%d is not a valid option, please select an option from the menu.\n", benefitOption);
+                System.out.printf("%d is not a valid option, please select an option from the menu.\n", _benefitOption);
             } catch (InputMismatchException e) {
                 System.err.println("Please enter a valid integer for your selection.\n");
                 scanner.nextLine();
             }
-
-        } while (!(benefitOption > 0 && benefitOption <= availableBenefitOptions(customer)));
-        return benefitOption;
+        } while (!(_benefitOption > 0 && _benefitOption <= availableBenefitOptions));
+        return _benefitOption;
     }
 
-    protected void accessRewardsBenefitOutput() {
+    // On the advice of Jimmy - This method was made public for the purpose of testing. This should be protected.
+    public int accessRewardsSelectionMenu(Customer customer) {
+        /* Displays the core options available to the customer.
+        Also access' the Customer object to retrieve the applicable Sting for tierSelected and compare to options avialble.
+        Returns int to constrain the int selections applicable to menu based on Tier*/
+        int minOptions = 2; // Minimum options available to all customers.
+        System.out.println("""
+                Which benefit would you like to access?
+                Navigate using the following integer options:
+                Option (1): Make a buildings claim
+                Option (2): Make a contents claim
+                """);
+        int optionsAvailable = minOptions; // Whilst this appears redundant, seemed prudent to ensure min options available.
+        // Offer additional options dependent on tierSelected. Nested 2x as lower dependency if higher required.
+        if (customer.getTierSelected().equals(_middleTier) || customer.getTierSelected().equals(_highestTier)) {
+            optionsAvailable = 3;
+            System.out.printf("Option (%d): Make a Legal claim\n", optionsAvailable);
+            if (customer.getTierSelected().equals(_highestTier)) {
+                optionsAvailable = 4;
+                System.out.printf("Option (%d): Make a Home Emergency claim\n", optionsAvailable);
+            }
+        }
+        return optionsAvailable;
+    }
+
+    // On the advice of Jimmy - This method was made public for the purpose of testing. This should be protected.
+    public String accessRewardsBenefitOutput(int _benefitOption) {
         // Functionality extended by inherited classes.
-        switch (benefitOption) {
+        switch (_benefitOption) {
             case 1:
-                System.out.println("""
+                return ("""
                         We are sorry to hear your property is damaged.
                         We have forwarded a link via email.
                         Please start uploading evidence and adding detail to help us handle your claim.
+                                                
                         """);
-                break;
             case 2:
-                System.out.println("""
+                return ("""
                         We are sorry to hear your possessions have been lost.
                         We have forwarded a link via email.
                         Please start uploading any evidence or police reports to help us handle your claim.
+                                                
                         """);
-                break;
         }
-    }
-
-    private int availableBenefitOptions(Customer customer) {
-        /* Passes the Customer object to retrieve the applicable Sting for tierSelected and compare to options avialble.
-        Returns int to constrain the int selections applicable to menu based on Tier*/
-        int minOptions = 2; // Minimum options available to all customers.
-        int optionsAvailable = minOptions; // Whilst this appears redundant, seemed prudent to ensure min options available
-
-        if (customer.getTierSelected().equals(_lowestTier)) {
-            optionsAvailable = 2;
-        } else if (customer.getTierSelected().equals(_middleTier)) {
-            optionsAvailable = 3;
-        } else if (customer.getTierSelected().equals(_highestTier)) {
-            optionsAvailable = 4;
-        }
-        return optionsAvailable;
+        return null;
     }
 
     public Tier returnTierFromTierSelected(String _inputTierSelected) {

@@ -41,7 +41,7 @@ public class Manager {
         terminateProgramme();
     }
 
-    public Customer customerRetrieveMenu() {
+    private Customer customerRetrieveMenu() {
         Customer c = null;
         // Declared reused values to change in all referenced places simultaneously.
         String openNewPolicy = "o";
@@ -49,6 +49,7 @@ public class Manager {
         String exitProgramme = "e";
         String proceedBenefits = "p";
         String changePolicy = "c";
+
         while (true) {
             // while controls customer input to accepted menu inputs only.
             String option = "";
@@ -71,11 +72,11 @@ public class Manager {
                         // Send to new policy creation in Customer.
                         c = createNewCustomer();
                         tier = c.getTier();
-                        break customerMenu;
+                        break;
                     } else if (option.equals(viewExistingPolicy)) {
                         // Send to retrieve policy  in Customer.
                         c = retreiveExistingCustomer();
-                        break customerMenu;
+                        break;
                     } else if (option.equals(exitProgramme)) {
                         // End Programme
                         terminateProgramme();
@@ -108,7 +109,7 @@ public class Manager {
                 } else if (input.equals(proceedBenefits)) {
                     return c;
                 } else if (input.equals(changePolicy)) { // start this process again from the start.
-                    break benefitConsole;
+                    break;
                 }
             }
         }

@@ -4,11 +4,10 @@ import DigitalArtifact_Refactored3_OOP.CoreDetails.Customer;
 import DigitalArtifact_Refactored3_OOP.CoreDetails.Product;
 import DigitalArtifact_Refactored3_OOP.CoreDetails.Satisfaction;
 import DigitalArtifact_Refactored3_OOP.CoreDetails.Tier;
-import DigitalArtifact_Refactored3_OOP.Digital_Artifact_Run.InvalidPolicyNumberException;
 import DigitalArtifact_Refactored3_OOP.Digital_Artifact_Run.Manager;
 import DigitalArtifact_Refactored3_OOP.ExtendedTier.Tier_Bronze;
 import DigitalArtifact_Refactored3_OOP.ExtendedTier.Tier_Gold;
-import DigitalArtifact_Refactored3_OOP.ExtendedTier.Tier_Silver;
+import DigitalArtifact_Refactored3_OOP.Storage.ReadFile;
 
 
 public class TestingClass {
@@ -17,7 +16,9 @@ public class TestingClass {
     static Customer customer = new Customer();
     static Tier tier = new Tier();
     static Satisfaction satisfaction = new Satisfaction();
-
+    static String _tierBronzeSelected = "Bronze";
+    static String _tierSilverSelected = "Silver";
+    static String _tierGoldSelected = "Gold";
     int testMaxPolNum = 2000000000;
     int testMinPolNum = testMaxPolNum - (testMaxPolNum * 2);
 
@@ -31,18 +32,20 @@ public class TestingClass {
     }*/
 
     public static void main(String[] args) {
-        String _firstname = "Fridge";
-        String _surname = "Magnet";
-        int _policyNumber = 654321;
-        String _tierBronzeSelected = "Bronze";
-        String _tierSilverSelected = "Silver";
-        String _tierGoldSelected = "Gold";
-
+        /*
         Tier _tierBronze = new Tier_Bronze();
         Tier _tierSilver = new Tier_Silver();
         Tier _tierGold = new Tier_Gold();
+        */
 
+        System.out.println("Does the Tier selection menu produce the correct result?");
         checkTierAssigned();
+        System.out.println("Does the Benefit selection menu produce the correct result?");
+        checkBenefits();
+        System.out.println("Does the correct text display when for an option when input on the benefit menu?");
+        checkRewardsBenefitOutputOnBronze();
+        System.out.println("When inputting a valid policy number, are the correct details returned?");
+        testingVs422618();
 
 
         /*
@@ -55,15 +58,56 @@ public class TestingClass {
     }
 
     public static void checkTierAssigned() {
-        int _tierAssignedInput = 2;
-        String _ouput = tier.tierAssigned(_tierAssignedInput);
-        if (_ouput.equals("Silver")) {
+        // Proved the user input corresponds to the expected assigned Tier.
+        int _tierAssignedUserInput = 2;
+        String _output = tier.tierAssigned(_tierAssignedUserInput);
+        if (_output.equals("Silver")) {
             System.out.println("Test Passed");
         } else {
             System.out.println("Test Failed");
         }
     }
 
+    public static void checkBenefits() {
+        customer.setTierSelected(_tierGoldSelected);
+        Tier _tierGold = new Tier_Gold();
+        tier.set_tier(_tierGold);
+        int _optionsAvailable = tier.accessRewardsSelectionMenu(customer);
+        if (_optionsAvailable == 4) {
+            System.out.println("Test Passed");
+        } else {
+            System.out.println("Test Failed");
+        }
+    }
+
+    public static void checkRewardsBenefitOutputOnBronze() {
+        int _optionsSelected = 2;
+        Tier _tierBronze = new Tier_Bronze();
+        tier.set_tier(_tierBronze);
+        String _output = tier.accessRewardsBenefitOutput(_optionsSelected);
+        if (_output.equals("""
+                We are sorry to hear your possessions have been lost.
+                We have forwarded a link via email.
+                Please start uploading any evidence or police reports to help us handle your claim.
+                                
+                """)) {
+            System.out.println("Test Passed");
+        } else {
+            System.out.println("Test Failed");
+        }
+    }
+
+    public static void testingVs422618() {
+        // Tests ReadFile Class
+        Customer _customer = ReadFile.accessPolicyData(422618);
+        if (_customer.getFirstName().equals("Possidon") && _customer.getSurname().equals("Zeus") && _customer.getTierSelected().equals("Gold")) {
+            System.out.println("Test Passed - Details Matched Policy 422618");
+        } else {
+            System.out.println("Test Failed - Details didn't Match Policy 422618");
+        }
+    }
+
+    /*
     public double getRandomDoubleBetween(int min, int max) {
         double truncated;
         double generate = ((Math.random() * (max - min)) + min);
@@ -93,32 +137,10 @@ public class TestingClass {
         }
     }
 
-    public void testingVs422618() {
-        // Tests ReadFile Class
-        if (customer.getFirstName().equals("Possidon")
-            && customer.getSurname().equals("Zeus")
-            && tier.get_tierSelected().equals("Gold")
-            && customer.getPolicyNumber() == 422618) {
-            System.out.println("Test Passed - Details Macthed Policy 422618");
-        } else {
-            System.out.println("Test Failed - Details didnt Macth Policy 422618");
-        }
-    }
-
     private void testOutcomePolicyInt() throws InvalidPolicyNumberException {
         int _genNum = getRandomIntBetween(testMinPolNum, testMaxPolNum);
         product.checkPolicyNumber(_genNum);
         System.out.println(_genNum);
     }
-
-    private void testChars() {
-        char ch = 'l';
-        String string = "Hello World";
-        int testing = StringUtils.timesCharOccurs(ch, string);
-        System.out.println(testing);
-
-        String string2 = "abcdefghijklmnopqrstuvwxyz";
-        String testing2 = StringUtils.frequencyReport(string);
-        System.out.println(testing2);
-    }
+    */
 }

@@ -25,7 +25,8 @@ public class Satisfaction {
         //Explain how collection works and set expectations.
         System.out.printf("""
                 We would like to ask you a few satisfaction questions.
-                Please provide a score of %d (low) to %d (high) for the next %d questions.\n
+                Please provide a score of %d (low) to %d (high) for the next %d questions.
+                                
                 """, minScore, maxScore, numberOfQuestions);
         // for loop to ensure each question is asked and placed in correct array position.
         for (i = 0; i < numberOfQuestions; i++) {
@@ -89,7 +90,7 @@ public class Satisfaction {
                 _inputValue = scanner.nextInt();
 
                 if (_inputValue >= minScore && _inputValue <= maxScore) {
-                    break scoreProvision;
+                    break;
                 }
 
                 System.out.printf("%d is not a valid option.\n", _inputValue);
