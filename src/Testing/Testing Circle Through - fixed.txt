@@ -1,6 +1,6 @@
 Testing: Circle Through - fixed
 
-DigitalArtifact_Refactored3_OOP.Main
+DigitalArtifact_Refactored3_OOP.Digital_Artifact.Main
 
 Hello and welcome to the programme.
 

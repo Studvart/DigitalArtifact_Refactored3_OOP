@@ -1,4 +1,4 @@
-package DigitalArtifact_Refactored3_OOP;
+package DigitalArtifact_Refactored3_OOP.Digital_Artifact;
 
 public class Main {
     public static void main(String[] args) {
@@ -17,7 +17,7 @@ public class Main {
     - Loops                                |    Yes
     - Methods                              |    Yes
     - Arrays                               |    Yes
-    - Testing                              |    Yes
+    - Testing                              |    Yes - apparently not
     - Objects                              |    Yes
 
     Code Features:                         |
@@ -34,7 +34,7 @@ public class Main {
                                                 Tier Class: _lowestTier,_middleTier,_highestTier & tierSelection() tierMenu: for breaks (in other places too)
                                                 Satisfaction Class: numberOfQuestions, maxScore, minScore
                                                 Customer Class: customerRetrieveMenu() variables
-    - Appropriate package structure        |    Yes - or close approximation.
+    - Appropriate package structure        |    Not described: Yes - or close approximation.
     - Extensive comments                   |    Yes
     - Consistent indentation               |    Yes
     - Variables named appropriately        |    Yes

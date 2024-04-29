@@ -1,4 +1,4 @@
-package DigitalArtifact_Refactored3_OOP;
+package DigitalArtifact_Refactored3_OOP.Digital_Artifact;
 
 import java.io.BufferedReader;
 import java.io.File;
