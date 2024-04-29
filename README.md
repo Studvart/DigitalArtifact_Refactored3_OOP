@@ -67,21 +67,23 @@ _________________________________
 
 #### Feature Set 1:
 ##### Are at least 2 Implemented? -- Yes
-| Requirement                          | Status                                                                                                                                   |
-| :----------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------- |
-| A Data Object                        |    Yes - See Customer, Tier, Satisfaction and Product Class'                                                                             |
-| File Input                           |    Yes - See ReadFile Class                                                                                                              |
-| File Output                          |    Yes - See WriteFile Class                                                                                                             |
-| Custom Exceptions                    |    Yes - See InvalidPolicyNumberException                                                                                                |
-| User friendly UI                     |    Yes - See try-catch in ReadFile and do-while in Customer and .toLowerCase() in process manager.                                       |
+
+| Requirement       | Status                                                                                                                                                                                             |
+|:------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| A Data Object     | Yes - See Customer, Tier, Satisfaction and Product Class'                                                                                                                                          |
+| File Input        | Yes - See ReadFile Class                                                                                                                                                                           |
+| File Output       | Yes - See WriteFile Class                                                                                                                                                                          |
+| Custom Exceptions | Yes - See InvalidPolicyNumberException                                                                                                                                                             |
+| User friendly UI  | Yes - See try-catch in ReadFile, do-while in Customer, .toLowerCase() in process manager, checkPolicyNumber() in Product and the Testing Package where ConsoleColours are used in testing outputs. |
 
 #### Feature Set 2:
 ##### Are at least 2 Implemented? -- Yes
-| Requirement                          | Status                                                                                                                                   |
-| :----------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------- |    
-| Encapsulation                        | Yes                                                                                                                                      |
-| Abstract Classes or Interfaces       | No                                                                                                                                       |
-| Inheritance                          | Yes                                                                                                                                      |
-| Streams API                          | No                                                                                                                                       |
-| GUI                                  | No                                                                                                                                       |
-| Software Architecture/Design Patterns| No                                                                                                                                       |
+
+| Requirement                           | Status                                                                         |
+|:--------------------------------------|:-------------------------------------------------------------------------------|    
+| Encapsulation                         | Yes - except for classes made public for testing - each noted.                 |
+| Abstract Classes or Interfaces        | No                                                                             |
+| Inheritance                           | Yes - CoreDetails package = Tier and ExtendedTier package.                     |
+| Streams API                           | Yes - See Satisfaction.returnScores() and Satisfaction.calculateAverageScore() |
+| GUI                                   | No                                                                             |
+| Software Architecture/Design Patterns | No                                                                             |
