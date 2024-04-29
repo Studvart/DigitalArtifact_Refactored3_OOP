@@ -1,4 +1,4 @@
-package DigitalArtifact_Refactored3_OOP.Digital_Artifact;
+package DigitalArtifact_Refactored3_OOP.Digital_Artifact_Run;
 
 public class Main {
     public static void main(String[] args) {

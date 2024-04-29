@@ -1,4 +1,4 @@
-package DigitalArtifact_Refactored3_OOP.Digital_Artifact;
+package DigitalArtifact_Refactored3_OOP.Storage;
 
 import java.io.File;
 

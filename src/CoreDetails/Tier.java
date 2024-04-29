@@ -1,6 +1,11 @@
-package DigitalArtifact_Refactored3_OOP.Digital_Artifact;
+package DigitalArtifact_Refactored3_OOP.CoreDetails;
 
 // Required packages to be present to run functions in this class.
+
+import DigitalArtifact_Refactored3_OOP.ExtendedTier.Tier_Bronze;
+import DigitalArtifact_Refactored3_OOP.ExtendedTier.Tier_Gold;
+import DigitalArtifact_Refactored3_OOP.ExtendedTier.Tier_Silver;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -26,7 +31,7 @@ public class Tier {
         return _tier;
     }
 
-    protected String tierSelection() {
+    public String tierSelection() {
         System.out.println("Here are our tiered options:");
         printBenefits();
         _tierSelected = null;
@@ -138,7 +143,7 @@ public class Tier {
         tierBenefitsGold();
     }
 
-    protected void accessRewards(Customer _customer) {
+    public void accessRewards(Customer _customer) {
         accessRewardsMenuSelection(_customer);
         accessRewardsBenefitOutput();
     }

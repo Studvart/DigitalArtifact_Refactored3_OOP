@@ -1,4 +1,6 @@
-package DigitalArtifact_Refactored3_OOP.Digital_Artifact;
+package DigitalArtifact_Refactored3_OOP.Storage;
+
+import DigitalArtifact_Refactored3_OOP.CoreDetails.Customer;
 
 import java.io.BufferedWriter;
 import java.io.File;

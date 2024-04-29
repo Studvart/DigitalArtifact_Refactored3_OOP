@@ -1,4 +1,6 @@
-package DigitalArtifact_Refactored3_OOP.Digital_Artifact;
+package DigitalArtifact_Refactored3_OOP.CoreDetails;
+
+import DigitalArtifact_Refactored3_OOP.Digital_Artifact_Run.InvalidPolicyNumberException;
 
 public class Product {
     // Declared absolute values

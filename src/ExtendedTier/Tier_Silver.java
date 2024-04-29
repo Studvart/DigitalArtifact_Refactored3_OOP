@@ -1,8 +1,10 @@
-package DigitalArtifact_Refactored3_OOP.Digital_Artifact;
+package DigitalArtifact_Refactored3_OOP.ExtendedTier;
+
+import DigitalArtifact_Refactored3_OOP.CoreDetails.Customer;
 
 public class Tier_Silver extends Tier_Bronze {
     @Override
-    protected void accessRewards(Customer _customer) {
+    public void accessRewards(Customer _customer) {
         super.accessRewards(_customer);
 
         switch (benefitOption) {

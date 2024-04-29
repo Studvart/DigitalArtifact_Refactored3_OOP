@@ -1,6 +1,10 @@
 package DigitalArtifact_Refactored3_OOP.Testing;
 
-import DigitalArtifact_Refactored3_OOP.Digital_Artifact.*;
+import DigitalArtifact_Refactored3_OOP.CoreDetails.Customer;
+import DigitalArtifact_Refactored3_OOP.CoreDetails.Product;
+import DigitalArtifact_Refactored3_OOP.CoreDetails.Satisfaction;
+import DigitalArtifact_Refactored3_OOP.CoreDetails.Tier;
+import DigitalArtifact_Refactored3_OOP.Digital_Artifact_Run.InvalidPolicyNumberException;
 
 public class TestingClass {
     static Product product = new Product();

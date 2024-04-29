@@ -1,6 +1,6 @@
 Testing: Exit
 
-DigitalArtifact_Refactored3_OOP.Digital_Artifact.Main
+DigitalArtifact_Refactored3_OOP.Digital_Artifact_Run.Main
 
 Hello and welcome to the programme.
 

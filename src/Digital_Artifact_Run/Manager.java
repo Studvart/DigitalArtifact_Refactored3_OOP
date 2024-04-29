@@ -1,16 +1,23 @@
-package DigitalArtifact_Refactored3_OOP.Digital_Artifact;
+package DigitalArtifact_Refactored3_OOP.Digital_Artifact_Run;
 
 // Required packages to be present to run functions in this class.
+
+import DigitalArtifact_Refactored3_OOP.CoreDetails.Customer;
+import DigitalArtifact_Refactored3_OOP.CoreDetails.Product;
+import DigitalArtifact_Refactored3_OOP.CoreDetails.Satisfaction;
+import DigitalArtifact_Refactored3_OOP.CoreDetails.Tier;
+import DigitalArtifact_Refactored3_OOP.Storage.ReadFile;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Manager {
     // Required Class variable
     Scanner scanner = new Scanner(System.in);
-    Product product = new Product();
-    Customer cust = new Customer();
-    Tier tier = new Tier();
-    Satisfaction satisfaction = new Satisfaction();
+    Product product = new DigitalArtifact_Refactored3_OOP.CoreDetails.Product();
+    Customer cust = new DigitalArtifact_Refactored3_OOP.CoreDetails.Customer();
+    Tier tier = new DigitalArtifact_Refactored3_OOP.CoreDetails.Tier();
+    Satisfaction satisfaction = new DigitalArtifact_Refactored3_OOP.CoreDetails.Satisfaction();
 
     public void processManager() {
         System.out.println("Hello and welcome to the programme.");
@@ -76,7 +83,7 @@ public class Manager {
                         System.out.printf("%s is not a valid selection.", option);
                     }
                 } catch (InputMismatchException e) {
-                    System.err.println("Please enter a valid integer for your selection.\n");
+                    System.err.println("Please enter a valid character for your selection.\n");
                     scanner.nextLine();
                 }
             }
@@ -124,7 +131,6 @@ public class Manager {
     private Customer retreiveExistingCustomer() {
         // Instantiate and return customer record based on retrieved details. Existing customer journey.
         Customer foundCustomer = null;
-        Tier t = null;
 
         // for loop ensures customer doest proceed with invaild input. Ensures a defined number of attempts.
         for (int i = 3; i > 0; i--) {

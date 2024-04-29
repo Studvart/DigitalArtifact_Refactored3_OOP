@@ -1,6 +1,8 @@
-package DigitalArtifact_Refactored3_OOP.Digital_Artifact;
+package DigitalArtifact_Refactored3_OOP.CoreDetails;
 
 // Required packages to be present to run functions in this class.
+
+import DigitalArtifact_Refactored3_OOP.Storage.WriteFile;
 
 import java.util.Scanner;
 
@@ -67,8 +69,7 @@ public class Customer {
                 Policy Number: %s
                 First Name: %s
                 Surname: %s
-                Tier: %s
-                
+                Tier: %s\n
                 """, policyNumber, firstName, surname, tierSelected);
     }
 
@@ -100,8 +101,7 @@ public class Customer {
                 Policy has been created successfully.
                 Associated to customer: %s %s.
                 Your reference number is %d.
-                You have selected tier: %s
-                                
+                You have selected tier: %s\n
                 """, firstName, surname, policyNumber, tierSelected);
     }
 

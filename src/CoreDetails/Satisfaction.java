@@ -1,6 +1,7 @@
-package DigitalArtifact_Refactored3_OOP.Digital_Artifact;
+package DigitalArtifact_Refactored3_OOP.CoreDetails;
 
 // Required packages to be present to run functions in this class.
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -24,8 +25,7 @@ public class Satisfaction {
         //Explain how collection works and set expectations.
         System.out.printf("""
                 We would like to ask you a few satisfaction questions.
-                Please provide a score of %d (low) to %d (high) for the next %d questions.
-                
+                Please provide a score of %d (low) to %d (high) for the next %d questions.\n
                 """, minScore, maxScore, numberOfQuestions);
         // for loop to ensure each question is asked and placed in correct array position.
         for (i = 0; i < numberOfQuestions; i++) {
@@ -104,9 +104,6 @@ public class Satisfaction {
     }
 
     public void returnScores() {
-        //
-
-        //
         int scoreSum = 0;
 
         System.out.println("You scored us:");
