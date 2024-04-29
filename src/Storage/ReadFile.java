@@ -12,6 +12,7 @@ public class ReadFile {
 
     public static Customer accessPolicyData(int policyNumber) {
         // Define file location and name convention of file to retrieve.
+        // File.separator ensures compatibility across operating systems.
         String filePath = Directory.DIRECTORY_POLICY_DETAILS + File.separator + policyNumber + ".txt";
         // Initialise a new file object.
         File file = new File(filePath);

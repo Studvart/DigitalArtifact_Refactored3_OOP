@@ -28,9 +28,8 @@ public class Manager {
         // Offer interaction with polymorphic options B/S/G
         tier.accessRewards(cust);
 
-        // Customer satisfaction survey
-        satisfaction.satisfactionSurvey();
-        satisfaction.returnScores();
+        // Customer satisfaction survey and results replay.
+        satisfaction.satisfactionActivity();
 
         // Testing Completed -> see "Testing" folder in src
         // Includes 1 example of bug detected and demonstrated fix.
@@ -133,7 +132,7 @@ public class Manager {
         // Instantiate and return customer record based on retrieved details. Existing customer journey.
         Customer foundCustomer = null;
 
-        // for loop ensures customer doest proceed with invaild input. Ensures a defined number of attempts.
+        // For loop ensures customer doest proceed with invaild input. Ensures a defined number of attempts.
         for (int i = 3; i > 0; i--) {
             try {
 

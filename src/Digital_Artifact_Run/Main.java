@@ -17,7 +17,7 @@ public class Main {
     - Loops                                |    Yes
     - Methods                              |    Yes
     - Arrays                               |    Yes
-    - Testing                              |    Yes - apparently not
+    - Testing                              |    Yes
     - Objects                              |    Yes
 
     Code Features:                         |
@@ -30,11 +30,12 @@ public class Main {
     - Basic user input                     |    Yes
 
     Code Style:                            |
-    - Self-directed code management        |    Maybe? See use of:
+    - Self-directed code management        |    Yes See use of:
+                                                Git Repository x2 @: https://github.com/Studvart/DigitalArtifact_Refactored3_OOP AND https://github.com/Studvart/Learning_MMU , Includes learning Markdown
                                                 Tier Class: _lowestTier,_middleTier,_highestTier & tierSelection() tierMenu: for breaks (in other places too)
                                                 Satisfaction Class: numberOfQuestions, maxScore, minScore
                                                 Customer Class: customerRetrieveMenu() variables
-    - Appropriate package structure        |    Not described: Yes - or close approximation.
+    - Appropriate package structure        |    Yes
     - Extensive comments                   |    Yes
     - Consistent indentation               |    Yes
     - Variables named appropriately        |    Yes
@@ -52,7 +53,7 @@ public class Main {
     - Encapsulation                        |    Yes
     - Abstract Classes or Interfaces       |    No
     - Inheritance                          |    Yes
-    - Streams API                          |    No
+    - Streams API                          |    Yes  - See Satisfaction.calculateAverageScore()
     - GUI                                  |    No
     - Software Architecture/Design Patterns|    No
 
