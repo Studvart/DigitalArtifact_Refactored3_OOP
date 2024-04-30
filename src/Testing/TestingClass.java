@@ -32,6 +32,8 @@ public class TestingClass {
         checkTierAssigned();
         System.out.println("Does the Benefit selection menu produce the correct result?");
         checkBenefits();
+        System.out.println("Demonstrates that the survey results are returned in teh correct order.");
+        testReturnScores();
         System.out.println("Does the correct text display when for an option when input on the benefit menu?");
         checkRewardsBenefitOutputOnBronze();
         System.out.println("Does writing store the correct details?");
@@ -40,23 +42,8 @@ public class TestingClass {
         testingVs422618();
         System.out.println("When inputting an invalid policy number, are these cases correctly identified?");
         testingInvalidPolNumHandling();
-        System.out.println("Demonstrates that the survey results are returned in teh correct order.");
-        testReturnScores();
         System.out.println("No More Tests");
-
-        /*
-        Tier _tierBronze = new Tier_Bronze();
-        Tier _tierSilver = new Tier_Silver();
-        Tier _tierGold = new Tier_Gold();
-
-        customer.setFirstName(_firstname);
-        customer.setSurname(_surname);
-        customer.setPolicyNumber(_policyNumber);
-        customer.setTierSelected(_tierSilverSelected);
-        tier.set_tier(_tierBronze);
-        */
     }
-
 
     public static void checkTierAssigned() {
         // Proves the user input corresponds to the expected assigned Tier.
@@ -80,6 +67,51 @@ public class TestingClass {
         } else {
             ConsoleColours.printRed("Test Failed");
         }
+    }
+
+    // Test method for returnScores() in Satisfaction class
+    public static void testReturnScores() {
+        /* ByteArrayOutputStream is used to capture the output normally printed to the console (System.out).
+           The redirected output can be compared to the expected output programmatically.
+           This allows the automation of the testing process without relying on manual observation.*/
+
+        // Create a sample survey array
+        int[] surveyArray = new int[]{1, 2, 3, 4, 5};
+
+        // Create an instance of the Satisfaction class
+        Satisfaction satisfaction = new Satisfaction();
+
+        // Call the returnScores method and capture the output
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        PrintStream printStream = new PrintStream(outputStream);
+        PrintStream originalOut = System.out;
+        System.setOut(printStream);
+
+        satisfaction.returnScores(surveyArray);
+
+        // Reset System.out
+        System.setOut(originalOut);
+
+        // Get the actual output
+        String actualOutput = outputStream.toString();
+
+        // Define the expected output
+        String expectedOutput = """
+                You scored us:
+                Ease: 1
+                Speed: 2
+                Clarity: 3
+                Claims: 4
+                Recommendation: 5
+                Average Score: 3.00
+                """;
+
+        /* Assert is a feature of the Java language that allows specification of
+        conditions that are expected to return true, during program execution.*/
+        // Compare actual and expected output
+        // assert condition : errorMessage;
+        assert actualOutput.equals(expectedOutput) : "Test failed";
+        ConsoleColours.printGreen("Test passed");
     }
 
     public static void checkRewardsBenefitOutputOnBronze() {
@@ -160,53 +192,6 @@ public class TestingClass {
         }
     }
 
-
-    // Test method for returnScores() in Satisfaction class
-    public static void testReturnScores() {
-        /* ByteArrayOutputStream is used to capture the output normally printed to the console (System.out).
-           The redirected output can be compared to the expected output programmatically.
-           This allows the automation of the testing process without relying on manual observation.*/
-
-        // Create a sample survey array
-        int[] surveyArray = new int[]{1, 2, 3, 4, 5};
-
-        // Create an instance of the Satisfaction class
-        Satisfaction satisfaction = new Satisfaction();
-
-        // Call the returnScores method and capture the output
-        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-        PrintStream printStream = new PrintStream(outputStream);
-        PrintStream originalOut = System.out;
-        System.setOut(printStream);
-
-        satisfaction.returnScores(surveyArray);
-
-        // Reset System.out
-        System.setOut(originalOut);
-
-        // Get the actual output
-        String actualOutput = outputStream.toString();
-
-        // Define the expected output
-        String expectedOutput = """
-                You scored us:
-                Ease: 1
-                Speed: 2
-                Clarity: 3
-                Claims: 4
-                Recommendation: 5
-                Average Score: 3.00
-                """;
-
-        /* Assert is a built-in feature of the Java language that allows developers
-        to specify conditions that they expect to hold true during program execution.*/
-        // Compare actual and expected output
-        // assert condition : errorMessage;
-        assert actualOutput.equals(expectedOutput) : "Test failed";
-        ConsoleColours.printGreen("Test passed");
-    }
-}
-
     /*
     public double getRandomDoubleBetween(int min, int max) {
         double truncated;
@@ -228,4 +213,5 @@ public class TestingClass {
         double generate = ((Math.random() * (max - min)) + min);
         return (int) generate;
     }*/
+}
 

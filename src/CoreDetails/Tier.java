@@ -26,10 +26,6 @@ public class Tier {
     public Tier() {
     }
 
-    public String get_tierSelected() {
-        return _tierSelected;
-    }
-
     //Provides access to private variable outside of Class
     public Tier get_tier() {
         return _tier;
