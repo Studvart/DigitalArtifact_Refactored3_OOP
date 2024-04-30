@@ -1,6 +1,7 @@
 package DigitalArtifact_Refactored3_OOP.CoreDetails;
 
 // Required packages to be present to run functions in this class.
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.stream.IntStream;
@@ -31,6 +32,7 @@ public class Satisfaction {
     private int[] satisfactionSurvey() {
         // Collect customer response into an array, for later use.
         int[] _surveyArray = new int[numberOfQuestions];
+        String _hWYS = "How would you score:";
 
         // Explain how collection works and set expectations.
         // Used global variable to ensure content is consistent and updated in relevant places.
@@ -44,42 +46,42 @@ public class Satisfaction {
             //switch uses input from i
             switch (i) {
                 case 0:
-                    System.out.println("""
-                            How would you score:
+                    System.out.printf("""
+                            %s
                             The ease of your journey?
-                            """);
+                            """, _hWYS);
                     _surveyArray[i] = validateSurveyInput();
                     scanner.nextLine();
                     break;
                 case 1:
-                    System.out.println("""
-                            How would you score:
+                    System.out.printf("""
+                            %s
                             The speed of your journey?
-                            """);
+                            """, _hWYS);
                     _surveyArray[i] = validateSurveyInput();
                     scanner.nextLine();
                     break;
                 case 2:
-                    System.out.println("""
-                            How would you score:
+                    System.out.printf("""
+                            %s
                             The clarity of the information presented?
-                            """);
+                            """, _hWYS);
                     _surveyArray[i] = validateSurveyInput();
                     scanner.nextLine();
                     break;
                 case 3:
-                    System.out.println("""
-                            How would you score:
+                    System.out.printf("""
+                            %s
                             The claims registration experience?
-                            """);
+                            """, _hWYS);
                     _surveyArray[i] = validateSurveyInput();
                     scanner.nextLine();
                     break;
                 case 4:
-                    System.out.println("""
-                            How would you score:
+                    System.out.printf("""
+                            %s
                             Your likelihood to recommend us?
-                            """);
+                            """, _hWYS);
                     _surveyArray[i] = validateSurveyInput();
                     scanner.nextLine();
                     break;
@@ -96,7 +98,6 @@ public class Satisfaction {
         int _inputValue = 0;
 
         // Declare a name for the following statement so that the break function, actions in the correct place.
-        scoreProvision:
         do {
             System.out.printf("Please score between %d and %d.\n", minScore, maxScore);
             try {
@@ -122,37 +123,36 @@ public class Satisfaction {
     public void returnScores(int[] _surveyArray) {
         System.out.println("You scored us:");
         // Using IntStream to iterate over the indices of the surveyArray
-        IntStream.range(0, numberOfQuestions)
-                .forEach(j -> {
-                    // Switch statement to print score for each question
-                    switch (j) {
-                        case 0:
-                            System.out.printf("""
-                                    Ease: %d
-                                    """, _surveyArray[j]);
-                            break;
-                        case 1:
-                            System.out.printf("""
-                                    Speed: %d
-                                    """, _surveyArray[j]);
-                            break;
-                        case 2:
-                            System.out.printf("""
-                                    Clarity: %d
-                                    """, _surveyArray[j]);
-                            break;
-                        case 3:
-                            System.out.printf("""
-                                    Claims: %d
-                                    """, _surveyArray[j]);
-                            break;
-                        case 4:
-                            System.out.printf("""
-                                    Recommendation: %d
-                                    """, _surveyArray[j]);
-                            break;
-                    }
-                });
+        IntStream.range(0, numberOfQuestions).forEach(j -> {
+            // Switch statement to print score for each question
+            switch (j) {
+                case 0:
+                    System.out.printf("""
+                            Ease: %d
+                            """, _surveyArray[j]);
+                    break;
+                case 1:
+                    System.out.printf("""
+                            Speed: %d
+                            """, _surveyArray[j]);
+                    break;
+                case 2:
+                    System.out.printf("""
+                            Clarity: %d
+                            """, _surveyArray[j]);
+                    break;
+                case 3:
+                    System.out.printf("""
+                            Claims: %d
+                            """, _surveyArray[j]);
+                    break;
+                case 4:
+                    System.out.printf("""
+                            Recommendation: %d
+                            """, _surveyArray[j]);
+                    break;
+            }
+        });
     }
 
     private void calculateAverageScore(int[] _surveyArray) {
