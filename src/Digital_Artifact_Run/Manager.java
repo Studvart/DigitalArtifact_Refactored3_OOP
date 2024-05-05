@@ -53,7 +53,6 @@ public class Manager {
             // while controls customer input to accepted menu inputs only.
             String option = "";
             // Declare a name for the following statement so that the break function, actions in the correct place.
-            customerMenu:
             while (!(option.equals(openNewPolicy) || option.equals(viewExistingPolicy) || option.equals(exitProgramme))) {
                 System.out.println("""
                         \nNavigate using the following character options:
@@ -65,41 +64,40 @@ public class Manager {
                 try catch ensures valid inputs only are accepted*/
                 try {
                     option = scanner.nextLine().toLowerCase();
-
-                    // defined outcomes
-                    if (option.equals(openNewPolicy)) {
-                        // Send to new policy creation in Customer.
-                        c = createNewCustomer();
-                        tier = c.getTier();
-                        break;
-                    } else if (option.equals(viewExistingPolicy)) {
-                        // Send to retrieve policy  in Customer.
-                        c = retreiveExistingCustomer();
-                        break;
-                    } else if (option.equals(exitProgramme)) {
-                        // End Programme
-                        terminateProgramme();
-                    } else {// Not sure why this is never triggered.
-                        System.out.printf("%s is not a valid selection.", option);
-                    }
                 } catch (InputMismatchException e) {
                     System.err.println("Please enter a valid character for your selection.\n");
                     scanner.nextLine();
+                }
+
+                // defined outcomes
+                if (option.equals(openNewPolicy)) {
+                    // Send to new policy creation in Customer.
+                    c = createNewCustomer();
+                    tier = c.getTier();
+                    break;
+                } else if (option.equals(viewExistingPolicy)) {
+                    // Send to retrieve policy in Customer.
+                    c = retreiveExistingCustomer();
+                    break;
+                } else if (option.equals(exitProgramme)) {
+                    // End Programme
+                    terminateProgramme();
+                } else {// Not sure why this is never triggered.
+                    System.out.printf("%s is not a valid selection.", option);
                 }
             }
 
             // While controls customer input to accepted menu inputs only.
             String input = "";
             // Declare a name for the following statement so that the break function, actions in the correct place.
-            benefitConsole:
             while (!(input.equals(proceedBenefits) || input.equals(changePolicy) || input.equals(exitProgramme))) {
-                System.out.println("""
+                System.out.printf("""
                         Would you like to:
                         Navigate using the following character options:
-                        Option (P): Proceed to the benefits of this policy
-                        Option (C): Change the policy you are reviewing
-                        Option (E): Exit the programme
-                        """);
+                        Option (%s): Proceed to the benefits of this policy
+                        Option (%s): Change the policy you are reviewing
+                        Option (%s): Exit the programme
+                        """, proceedBenefits.toUpperCase(), changePolicy.toUpperCase(), exitProgramme.toUpperCase());
                 input = scanner.nextLine().toLowerCase();
 
                 // defined outcomes
@@ -110,6 +108,10 @@ public class Manager {
                 } else if (input.equals(changePolicy)) { // start this process again from the start.
                     break;
                 }
+                System.out.printf("""
+                        %s is not a valid selection.
+                                                
+                        """, input);
             }
         }
     }
@@ -131,9 +133,10 @@ public class Manager {
     private Customer retreiveExistingCustomer() {
         // Instantiate and return customer record based on retrieved details. Existing customer journey.
         Customer foundCustomer = null;
+        int maxAttempts = 3;
 
         // For loop ensures customer doest proceed with invaild input. Ensures a defined number of attempts.
-        for (int i = 3; i > 0; i--) {
+        for (int i = maxAttempts; i > 0; i--) {
             try {
 
                 // Take Policy number from customer
@@ -154,7 +157,7 @@ public class Manager {
                     foundCustomer.customerInformation();
                     return foundCustomer;
                 } else {
-                    // If entered value is in the correct range but equivalent file isn't located.
+                    // If entered value is in the correct range but the equivalent file isn't located.
                     throw new InvalidPolicyNumberException("Account was not found", policyNumber);
                 }
 

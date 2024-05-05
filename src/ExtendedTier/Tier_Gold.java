@@ -9,6 +9,7 @@ public class Tier_Gold extends Tier_Silver {
         super.accessRewardsBenefitOutput(benefitOption);
     }
 
+    // On the advice of Jimmy - This method was made public for the purpose of testing. This should be protected.
     public String accessRewardsBenefitOutput(int _benefitOption) {
         switch (_benefitOption) {
             case 4:

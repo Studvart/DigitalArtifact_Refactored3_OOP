@@ -57,7 +57,7 @@ public class Main {
     - Streams API                          |    Yes - See Satisfaction.returnScores() and Satisfaction.calculateAverageScore()
     - GUI                                  |    No
     - Software Architecture/Design Patterns|    Maybe - Please consider the Tier class: using _lowestTier _middleTier _highestTier and Product class: for policyNumberMax policyNumberMin to reduce risk to future changes from needing to redefine set value throughout.
-                                                Please also consider the Satisfaction Class, that is entirely reusable and can be reduced/extended easily.
+                                                Please also consider the Satisfaction Class, In my opinion, it adheres to SOLID and KISS.
 
      */
 }

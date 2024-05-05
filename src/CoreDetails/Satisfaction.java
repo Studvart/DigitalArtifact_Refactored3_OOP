@@ -34,14 +34,14 @@ public class Satisfaction {
         int[] _surveyArray = new int[numberOfQuestions];
         String _hWYS = "How would you score:";
 
-        // Explain how collection works and set expectations.
+        // Explain how the collection works and set expectations.
         // Used global variable to ensure content is consistent and updated in relevant places.
         System.out.printf("""
                 We would like to ask you a few satisfaction questions.
                 Please provide a score of %d (low) to %d (high) for the next %d questions.
                                 
                 """, minScore, maxScore, numberOfQuestions);
-        // for loop to ensure each question is asked and placed in correct array position.
+        // for loop to ensure each question is asked and placed in the correct array position.
         for (i = 0; i < numberOfQuestions; i++) {
             //switch uses input from i
             switch (i) {
@@ -118,7 +118,8 @@ public class Satisfaction {
         return _inputValue;
     }
 
-    // On the advice of Jimmy - This method was made public for the purpose of testing. This should be protected.
+    // On the advice of Jimmy - This method was made public for the purpose of testing.
+    // This should be private.
     // Updated method to print scores for each question.
     public void returnScores(int[] _surveyArray) {
         System.out.println("You scored us:");

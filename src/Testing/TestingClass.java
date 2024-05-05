@@ -32,7 +32,7 @@ public class TestingClass {
         checkTierAssigned();
         System.out.println("Does the Benefit selection menu produce the correct result?");
         checkBenefits();
-        System.out.println("Demonstrates that the survey results are returned in teh correct order.");
+        System.out.println("Do the survey results get returned in the correct order?");
         testReturnScores();
         System.out.println("Does the correct text display when for an option when input on the benefit menu?");
         checkRewardsBenefitOutputOnBronze();

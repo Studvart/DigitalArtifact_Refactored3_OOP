@@ -66,6 +66,7 @@ public class Customer {
     }
 
     public void createPolicyRecord() {
+        // Process to capture new customer details
         System.out.println("Before we start, lets collect some data about you.");
 
         captureFirstname();
@@ -73,9 +74,9 @@ public class Customer {
         captureTier();
         assignPolicyNumber();
 
-        // Creates customer object with user defined characteristics.
+        // Creates a customer object with user defined characteristics.
         WriteFile.writeCustomerFile(this);
-
+        // Prints recorded details to console
         replaySuccessfulRecordDetails();
     }
 
@@ -107,13 +108,14 @@ public class Customer {
     }
 
     private void assignPolicyNumber() {
-        //Force policy number between parameter defined numbers held in appropriate Class for this model.
+        //Force policy number between parameter defined numbers held in the appropriate Class for this model.
         while (!(policyNumber > product.getPolicyNumberMin() && policyNumber < product.getPolicyNumberMax())) {
             policyNumber = (int) ((Math.random() * (product.getPolicyNumberMax() - product.getPolicyNumberMin())) + product.getPolicyNumberMin());
         }
     }
 
     private void replaySuccessfulRecordDetails() {
+        // Prints recorded details to console
         System.out.printf("""
                 Policy has been created successfully.
                 Associated to customer: %s %s.

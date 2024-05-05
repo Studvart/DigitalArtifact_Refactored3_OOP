@@ -2,6 +2,7 @@ package DigitalArtifact_Refactored3_OOP.ExtendedTier;
 
 import DigitalArtifact_Refactored3_OOP.CoreDetails.Customer;
 
+// this should be
 public class Tier_Silver extends Tier_Bronze {
     @Override
     public void accessRewards(Customer _customer) {
@@ -9,6 +10,7 @@ public class Tier_Silver extends Tier_Bronze {
         super.accessRewardsBenefitOutput(benefitOption);
     }
 
+    // On the advice of Jimmy - This method was made public for the purpose of testing. This should be protected.
     public String accessRewardsBenefitOutput(int _benefitOption) {
         switch (_benefitOption) {
             case 3:
