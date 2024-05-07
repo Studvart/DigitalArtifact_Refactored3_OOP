@@ -26,6 +26,10 @@ public class Tier {
     public Tier() {
     }
 
+    public String get_tierSelected() {
+        return _tierSelected;
+    }
+
     //Provides access to private variable outside of Class
     public Tier get_tier() {
         return _tier;
@@ -46,12 +50,11 @@ public class Tier {
         return _tierSelected;
     }
 
-    protected int optionMenu() {
+    public int optionMenu() {
         // Do loop works as a constraint to limit acceptable values.
         int _option = 0;
 
         // Declare a name for the following statement so that the break function, actions in the correct place.
-        tierMenu:
         do {
             System.out.printf("""
                     Which tier would you like?
@@ -158,7 +161,6 @@ public class Tier {
         int _benefitOption = 0;
         // Call to process which begins inheritance journey.
         // Declare a name for the following statement so that the break function, actions in the correct place.
-        accessMenu:
         do {
             availableBenefitOptions = accessRewardsSelectionMenu(customer);
             try {

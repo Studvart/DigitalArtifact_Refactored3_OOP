@@ -8,14 +8,19 @@ import DigitalArtifact_Refactored3_OOP.Digital_Artifact_Run.InvalidPolicyNumberE
 import DigitalArtifact_Refactored3_OOP.Digital_Artifact_Run.Manager;
 import DigitalArtifact_Refactored3_OOP.ExtendedTier.Tier_Bronze;
 import DigitalArtifact_Refactored3_OOP.ExtendedTier.Tier_Gold;
+import DigitalArtifact_Refactored3_OOP.ExtendedTier.Tier_Silver;
 import DigitalArtifact_Refactored3_OOP.Storage.ReadFile;
 import DigitalArtifact_Refactored3_OOP.Storage.WriteFile;
 
+import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
 import java.io.PrintStream;
+import java.util.Scanner;
 
 
 public class TestingClass {
+    public static Scanner scanner = new Scanner(System.in);
     static Manager manager = new Manager();
     static Product product = new Product();
     static Customer customer = new Customer();
@@ -28,21 +33,65 @@ public class TestingClass {
     int testMinPolNum = testMaxPolNum - (testMaxPolNum * 2);
 
     public static void main(String[] args) {
-        System.out.println("Does the Tier selection menu produce the correct result?");
+        ConsoleColours.printCyan("Does the Tier selection menu produce the correct result?");
         checkTierAssigned();
-        System.out.println("Does the Benefit selection menu produce the correct result?");
+        ConsoleColours.printCyan("Does the Benefit selection menu produce the correct result?");
         checkBenefits();
-        System.out.println("Do the survey results get returned in the correct order?");
+        ConsoleColours.printCyan("Do the survey results get returned in the correct order?");
         testReturnScores();
-        System.out.println("Does the correct text display when for an option when input on the benefit menu?");
+        ConsoleColours.printCyan("Does the correct text display when for an option when input on the benefit menu (Bronze)?");
         checkRewardsBenefitOutputOnBronze();
-        System.out.println("Does writing store the correct details?");
+        ConsoleColours.printCyan("Does the correct text display when for an option when input on the benefit menu (Silver)?");
+        checkRewardsBenefitOutputOnSilver();
+        ConsoleColours.printCyan("Does the correct text display when for an option when input on the benefit menu (Gold)?");
+        checkRewardsBenefitOutputOnGold();
+        ConsoleColours.printCyan("Does writing store the correct details?");
         testingNewCustomerCommit();
-        System.out.println("When inputting a valid policy number, are the correct details returned?");
+        ConsoleColours.printCyan("When inputting a valid policy number, are the correct details returned?");
         testingVs422618();
-        System.out.println("When inputting an invalid policy number, are these cases correctly identified?");
+        ConsoleColours.printCyan("When inputting an invalid policy number, are these cases correctly identified?");
         testingInvalidPolNumHandling();
-        System.out.println("No More Tests");
+        ConsoleColours.printCyan("When inputting determined inputs, will the menu proceed as required?");
+        testCustomerRetrieveMenu();
+        //Cant get to work
+        //System.out.println("When inputting an invalid policy number, are these cases correctly identified?");
+        //testRetreiveExistingCustomer();
+        ConsoleColours.printCyan("When inputting determined inputs, will the Tier menu proceed as required and return a match to option 2?");
+        testOptionMenu();
+        ConsoleColours.printCyan("Does the tier selected returns correctly?");
+        testTierSelection();
+        ConsoleColours.printCyan("Does the tier assigned returns correctly?");
+        testTierAssigned();
+        ConsoleColours.printCyan("Does the policy number input get returned?");
+        testCapturePolicyNumber();
+        ConsoleColours.printCyan("No More Tests, Does Programme Terminate?");
+        testTerminate();
+    }
+
+    private static void provideInput(String data) {
+        // Mock user String input for testing
+        InputStream stdin = System.in;
+        System.setIn(new ByteArrayInputStream(data.getBytes()));
+    }
+
+    private static void provideInputInt(int... data) {
+        // Mock user int input for testing
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        PrintStream printStream = new PrintStream(outputStream);
+        for (int value : data) {
+            printStream.println(value);
+        }
+        System.setIn(new ByteArrayInputStream(outputStream.toByteArray()));
+    }
+
+    private static void restoreInput() {
+        // Restore standard input
+        System.setIn(System.in);
+    }
+
+    private static void restoreOutput() {
+        // Restore standard output
+        System.setOut(System.out);
     }
 
     public static void checkTierAssigned() {
@@ -116,6 +165,7 @@ public class TestingClass {
 
     public static void checkRewardsBenefitOutputOnBronze() {
         // Proves the correct message is displayed when the corresponding option is selected.
+        Tier tier = new Tier();
         int _optionsSelected = 2;
         Tier _tierBronze = new Tier_Bronze();
         tier.set_tier(_tierBronze);
@@ -125,6 +175,40 @@ public class TestingClass {
                 We have forwarded a link via email.
                 Please start uploading any evidence or police reports to help us handle your claim.
                                 
+                """)) {
+            ConsoleColours.printGreen("Test Passed");
+        } else {
+            ConsoleColours.printRed("Test Failed");
+        }
+    }
+
+    public static void checkRewardsBenefitOutputOnSilver() {
+        // Proves the correct message is displayed when the corresponding option is selected.
+        Tier_Silver tierSil = new Tier_Silver();
+        int _optionsSelected = 3;
+        String _output = tierSil.accessRewardsBenefitOutput(_optionsSelected);
+        if (_output.equals("""
+                Our Legal team will be in touch within 1 working day.
+                We will assign your case to a relevantly skilled team.
+                Please have as much documentation to hand to support the discussion.
+                                        
+                """)) {
+            ConsoleColours.printGreen("Test Passed");
+        } else {
+            ConsoleColours.printRed("Test Failed");
+        }
+    }
+
+    public static void checkRewardsBenefitOutputOnGold() {
+        // Proves the correct message is displayed when the corresponding option is selected.
+        Tier_Gold tierGold = new Tier_Gold();
+        int _optionsSelected = 4;
+        String _output = tierGold.accessRewardsBenefitOutput(_optionsSelected);
+        if (_output.equals("""
+                Our Team will be in contact within 1 hour.
+                Essential home care instructions have been emailed to you,
+                to help safeguard your home until we get in touch.
+                                        
                 """)) {
             ConsoleColours.printGreen("Test Passed");
         } else {
@@ -191,6 +275,110 @@ public class TestingClass {
             ConsoleColours.printRed("Test Failed");
         }
     }
+
+    public static void testCustomerRetrieveMenu() {
+        // Simulates user inputs
+        provideInput("v\n999999\n\np\n");
+        Manager manager = new Manager();
+        Customer retrievedCustomer = manager.customerRetrieveMenu();
+        // Add assertions to verify the behavior of the method
+        Customer expectedCustomer = ReadFile.accessPolicyData(999999);
+        assert retrievedCustomer.equals(expectedCustomer) : "Test failed";
+        ConsoleColours.printGreen("Test passed");
+        restoreInput();
+    }
+
+    public static void testCapturePolicyNumber() {
+        // Simulates user inputs
+        provideInput("999999\n");
+        Manager manager = new Manager();
+        int retrievedCustomerPolicyNumber = manager.capturePolicyNumber();
+        // Add assertions to verify the behavior of the method
+        assert retrievedCustomerPolicyNumber == 999999 : "Test failed";
+        ConsoleColours.printGreen("Test passed");
+        restoreInput();
+    }
+
+    public static void testRetreiveExistingCustomer() {
+        // Simulates user inputs
+        provideInput("Q\nfrg\n!!dd\n");
+        // Call the method being tested
+        Customer retrievedCustomer = manager.retreiveExistingCustomer();
+        // Verify that the method returns null after three attempts
+        if (retrievedCustomer == null) {
+            ConsoleColours.printGreen("Test Passed: Method returned null after three attempts.");
+        } else {
+            ConsoleColours.printRed("Test Failed: Method did not return null after three attempts.");
+        }
+        restoreInput();
+    }
+
+    public static void testOptionMenu() {
+        // Simulates user inputs
+        provideInput("Q\nf\n!\n44\n2");
+        Tier tier = new Tier();
+        // Call the method being tested
+        int returnedInt = tier.optionMenu();
+        // Verify that the method returns null after three attempts
+        if (returnedInt == 2) {
+            ConsoleColours.printGreen("Test Passed");
+        } else {
+            ConsoleColours.printRed("Test Failed");
+        }
+        restoreInput();
+        // Errors for this print at the end of the console, cant work out why or how to suppress.
+    }
+
+    public static void testTierSelection() {
+        // Simulates user inputs
+        provideInput("3\n");
+        Tier tier = new Tier();
+        // Call the method being tested
+        String _tierSelect = tier.tierSelection();
+        // Verify that the method returns null after three attempts
+        if (_tierSelect.equals("Gold")) {
+            ConsoleColours.printGreen("Test Passed");
+        } else {
+            ConsoleColours.printRed("Test Failed");
+        }
+        restoreInput();
+    }
+
+    public static void testTierAssigned() {
+        // Simulates user inputs
+        int _option = 1;
+        Tier tier = new Tier();
+        // Call the method being tested
+        String _tierSelect = tier.tierAssigned(_option);
+        // Verify that the method returns null after three attempts
+        if (_tierSelect.equals("Bronze")) {
+            ConsoleColours.printGreen("Test Passed");
+        } else {
+            ConsoleColours.printRed("Test Failed");
+        }
+        restoreInput();
+    }
+
+    public static void testTerminate() {
+        // Redirect System.out to capture the output
+        ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outputStreamCaptor));
+        // Call the method being tested
+        Manager manager = new Manager();
+        manager.terminateProgramme();
+        // Verify the printed message
+        String expectedMessage = "Thank you for interacting with SAG Bank Insurance Services Limited.";
+        String actualMessage = outputStreamCaptor.toString();
+        if (expectedMessage.equals(actualMessage)) {
+            ConsoleColours.printGreen("Test Passed");
+        } else {
+            ConsoleColours.printRed("Test Failed");
+        }
+        // Restore System.out to its original state
+        System.setOut(System.out);
+    }
+
+
 
     /*
     public double getRandomDoubleBetween(int min, int max) {

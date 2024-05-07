@@ -40,7 +40,7 @@ public class Manager {
         terminateProgramme();
     }
 
-    private Customer customerRetrieveMenu() {
+    public Customer customerRetrieveMenu() {
         Customer c = null;
         // Declared reused values to change in all referenced places simultaneously.
         String openNewPolicy = "o";
@@ -117,7 +117,7 @@ public class Manager {
     }
 
     // Repeatable class to terminate the programme when required.
-    private void terminateProgramme() {
+    public void terminateProgramme() {
         // End Programme immediately.
         System.out.println("Thank you for interacting with SAG Bank Insurance Services Limited.");
         System.exit(1);
@@ -130,7 +130,7 @@ public class Manager {
         return customer;
     }
 
-    private Customer retreiveExistingCustomer() {
+    public Customer retreiveExistingCustomer() {
         // Instantiate and return customer record based on retrieved details. Existing customer journey.
         Customer foundCustomer = null;
         int maxAttempts = 3;
@@ -176,7 +176,7 @@ public class Manager {
         return foundCustomer;
     }
 
-    private int capturePolicyNumber() {
+    public int capturePolicyNumber() {
         System.out.println("Please enter the policy number to review:");
         int _policyNumber = scanner.nextInt();
         scanner.nextLine();
