@@ -39,18 +39,20 @@ public class TestingClass {
         checkBenefits();
         ConsoleColours.printCyan("Do the survey results get returned in the correct order?");
         testReturnScores();
+        ConsoleColours.printCyan("Does the survey validation accept only correct inputs?");
+        testValidateSurveyInput();
         ConsoleColours.printCyan("Does the correct text display when for an option when input on the benefit menu (Bronze)?");
-        checkRewardsBenefitOutputOnBronze();
+        testRewardsBenefitOutputOnBronze();
         ConsoleColours.printCyan("Does the correct text display when for an option when input on the benefit menu (Silver)?");
-        checkRewardsBenefitOutputOnSilver();
+        testRewardsBenefitOutputOnSilver();
         ConsoleColours.printCyan("Does the correct text display when for an option when input on the benefit menu (Gold)?");
-        checkRewardsBenefitOutputOnGold();
+        testRewardsBenefitOutputOnGold();
         ConsoleColours.printCyan("Does writing store the correct details?");
-        testingNewCustomerCommit();
+        testNewCustomerCommit();
         ConsoleColours.printCyan("When inputting a valid policy number, are the correct details returned?");
-        testingVs422618();
+        testVs422618();
         ConsoleColours.printCyan("When inputting an invalid policy number, are these cases correctly identified?");
-        testingInvalidPolNumHandling();
+        testInvalidPolNumHandling();
         ConsoleColours.printCyan("When inputting determined inputs, will the menu proceed as required?");
         testCustomerRetrieveMenu();
         //Cant get to work
@@ -163,7 +165,21 @@ public class TestingClass {
         ConsoleColours.printGreen("Test passed");
     }
 
-    public static void checkRewardsBenefitOutputOnBronze() {
+    public static void testValidateSurveyInput() {
+        // Simulates user inputs
+        provideInput("v\n999999\n\np\n-1\n3");
+        Satisfaction satisfaction = new Satisfaction();
+        // Call the method being tested
+        int returnedInt = satisfaction.validateSurveyInput();
+        // Verify that the method returns null after three attempts
+        if (returnedInt == 3) {
+            ConsoleColours.printGreen("Test Passed");
+        } else {
+            ConsoleColours.printRed("Test Failed");
+        }
+    }
+
+    public static void testRewardsBenefitOutputOnBronze() {
         // Proves the correct message is displayed when the corresponding option is selected.
         Tier tier = new Tier();
         int _optionsSelected = 2;
@@ -182,7 +198,7 @@ public class TestingClass {
         }
     }
 
-    public static void checkRewardsBenefitOutputOnSilver() {
+    public static void testRewardsBenefitOutputOnSilver() {
         // Proves the correct message is displayed when the corresponding option is selected.
         Tier_Silver tierSil = new Tier_Silver();
         int _optionsSelected = 3;
@@ -199,7 +215,7 @@ public class TestingClass {
         }
     }
 
-    public static void checkRewardsBenefitOutputOnGold() {
+    public static void testRewardsBenefitOutputOnGold() {
         // Proves the correct message is displayed when the corresponding option is selected.
         Tier_Gold tierGold = new Tier_Gold();
         int _optionsSelected = 4;
@@ -216,7 +232,7 @@ public class TestingClass {
         }
     }
 
-    public static void testingNewCustomerCommit() {
+    public static void testNewCustomerCommit() {
         // Proves the WriteFile Class stores the correct details.
         Customer cust = new Customer();
         String _fN = "Frank";
@@ -236,7 +252,7 @@ public class TestingClass {
         }
     }
 
-    public static void testingVs422618() {
+    public static void testVs422618() {
         // Proves the ReadFile Class returns the correct results from a stored record.
         Customer _customer = ReadFile.accessPolicyData(422618);
         if (_customer.getFirstName().equals("Possidon") && _customer.getSurname().equals("Zeus") && _customer.getTierSelected().equals("Gold")) {
@@ -246,7 +262,7 @@ public class TestingClass {
         }
     }
 
-    public static void testingInvalidPolNumHandling() {
+    public static void testInvalidPolNumHandling() {
         // Proves that the error handling correctly identifies incompatible values.
         int[] testPolNum = {-5, 32475, 1234569, 111111};
         int _invalidCount = 0;
@@ -374,7 +390,7 @@ public class TestingClass {
         } else {
             ConsoleColours.printRed("Test Failed");
         }
-        // Restore System.out to its original state
+        // Restore original state
         System.setOut(System.out);
     }
 

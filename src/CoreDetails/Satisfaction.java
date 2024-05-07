@@ -93,8 +93,9 @@ public class Satisfaction {
         return _surveyArray;
     }
 
+    // On the advice of Jimmy - This method was made public for the purpose of testing. It should be private.
     // Created Method to reduce code repetition.
-    private int validateSurveyInput() {
+    public int validateSurveyInput() {
         int _inputValue = 0;
 
         // Declare a name for the following statement so that the break function, actions in the correct place.
@@ -118,8 +119,7 @@ public class Satisfaction {
         return _inputValue;
     }
 
-    // On the advice of Jimmy - This method was made public for the purpose of testing.
-    // This should be private.
+    // On the advice of Jimmy - This method was made public for the purpose of testing. It should be private.
     // Updated method to print scores for each question.
     public void returnScores(int[] _surveyArray) {
         System.out.println("You scored us:");
@@ -160,6 +160,7 @@ public class Satisfaction {
         // Calculate the average using Streams API rather than repeated addition and eventual divide.
         averageScore = IntStream.of(_surveyArray).average().orElse(0.0);
         System.out.printf("Average Score: %.2f\n", averageScore);
+        // This is tested as part of testReturnScores()
     }
 }
 

@@ -40,6 +40,7 @@ public class Manager {
         terminateProgramme();
     }
 
+    // On the advice of Jimmy - This method was made public for the purpose of testing. It should be private.
     public Customer customerRetrieveMenu() {
         Customer c = null;
         // Declared reused values to change in all referenced places simultaneously.
@@ -130,6 +131,7 @@ public class Manager {
         return customer;
     }
 
+    // On the advice of Jimmy - This method was made public for the purpose of testing. It should be private.
     public Customer retreiveExistingCustomer() {
         // Instantiate and return customer record based on retrieved details. Existing customer journey.
         Customer foundCustomer = null;
@@ -176,6 +178,7 @@ public class Manager {
         return foundCustomer;
     }
 
+    // On the advice of Jimmy - This method was made public for the purpose of testing. It should be private.
     public int capturePolicyNumber() {
         System.out.println("Please enter the policy number to review:");
         int _policyNumber = scanner.nextInt();
